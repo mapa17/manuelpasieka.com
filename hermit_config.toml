@@ -1,5 +1,5 @@
-publishdir = "/var/www/manuelpasieka.com"
-baseURL = "http://manuelpasieka.com"
+#publishdir = "/var/www/manuelpasieka.com"
+baseURL = "http://www.manuelpasieka.com"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Manuel Pasieka"
