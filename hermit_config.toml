@@ -1,4 +1,4 @@
-publishdir = "./public"
+#publishdir = "./public"
 baseURL = "http://www.manuelpasieka.com"
 languageCode = "en-us"
 defaultContentLanguage = "en"
