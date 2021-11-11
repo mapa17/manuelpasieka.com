@@ -1,7 +1,9 @@
 +++
-title = "About Hugo"
-date = "2014-04-09"
+title = "About Me"
+date = "2021-11-11"
 +++
+
+{{< figure src="/img/profile.jpg" title="Manuel Pasieka" >}}
 
 Hugo is the **world’s fastest framework for building websites**. It is written in Go.
 
