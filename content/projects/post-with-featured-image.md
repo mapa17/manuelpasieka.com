@@ -7,6 +7,7 @@ images:
 tags: 
   - Demo
   - Image
+draft: True 
 ---
 
 Just define the image URL in the content’s front matter, the featured image will be displayed as the background. 

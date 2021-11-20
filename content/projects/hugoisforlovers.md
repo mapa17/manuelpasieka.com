@@ -1,14 +1,15 @@
-+++
-title = "Getting Started with Hugo"
-tags = [
+---
+title: "Getting Started with Hugo"
+tags: [
     "go",
     "golang",
     "hugo",
     "development",
 ]
-date = "2014-04-02"
-toc = true
-+++
+date: "2014-04-02"
+toc: true
+draft: True 
+---
 
 ## Step 1. Install Hugo
 
