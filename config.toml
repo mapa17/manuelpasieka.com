@@ -1,7 +1,5 @@
 baseURL = "http://manuelpasieka.com"
 languageCode = "en-us"
-defaultContentLanguage = "en"
-title = "Manuel Pasieka"
 theme = "hermit"
 # enableGitInfo = true
 pygmentsCodefences  = true
@@ -12,6 +10,70 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
 enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
 # googleAnalytics = "UA-123-45"
 # disqusShortname = "yourdiscussshortname"
+
+defaultContentLanguage = "de"
+[languages]
+  [languages.en]
+    title = "Manuel Pasieka"
+    homeSubtitle = "Leverage the power of machine learning for your business."
+    languageName = "en"
+    contentDir = "content/en"
+    weight = 2
+    [languages.en.params]
+      icon = "/img/english-flag.png"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        name = "Services"
+        url = "services/"
+        weight = 10
+        [languages.en.menu.main.params]
+          show_on_landing_page = true 
+
+      [[languages.en.menu.main]]
+        name = "Projects"
+        url = "projects/"
+        weight = 20
+
+      [[languages.en.menu.main]]
+        name = "Austrian Ai Podcast"
+        url = "aaip/"
+        weight = 30
+
+      [[languages.en.menu.main]]
+        name = "About"
+        url = "about-me/"
+        weight = 40
+  
+  [languages.de]
+    title = "Manuel Pasieka"
+    homeSubtitle = "Nützen Sie Machine Learning für ihr Unternehmen"
+    languageName = "de"
+    contentDir =  "content/de"
+    weight = 1
+    [languages.de.params]
+      icon = "/img/austrian-flag.png"
+
+    [languages.de.menu]
+      [[languages.de.menu.main]]
+        name = "Dienstleistungen"
+        url = "services/"
+        weight = 10
+
+      [[languages.de.menu.main]]
+        name = "Projekte"
+        url = "projects/"
+        weight = 20
+
+      [[languages.de.menu.main]]
+        name = "Austrian Ai Podcast"
+        url = "aaip/"
+        weight = 30
+
+      [[languages.de.menu.main]]
+        name = "Über mich"
+        url = "about-me/"
+        weight = 40
 
 [author]
   name = "Manuel Pasieka"
@@ -36,7 +98,6 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   # images = [""]
   themeColor = "#494f5c"
 
-  homeSubtitle = "Leverage the power of machine learning for your business."
   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""  # Homepage background-image URL
 
@@ -62,48 +123,3 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   [[params.social]]
     name = "github"
     url = "https://github.com/mapa17"
-
-[menu]
-  [[menu.main]]
-    name = "Services"
-    url = "services/"
-    weight = 10
-    [menu.main.params]
-      show_on_landing_page = true 
-
-  [[menu.main]]
-    name = "Projects"
-    url = "projects/"
-    weight = 20
-    [menu.main.params]
-      show_on_landing_page = true 
-
-  [[menu.main]]
-    name = "Austrian Ai Podcast"
-    url = "aaip/"
-    weight = 30
-    [menu.main.params]
-      show_on_landing_page = true 
-
-  [[menu.main]]
-    name = "About"
-    url = "about-me/"
-    weight = 40
-    [menu.main.params]
-      show_on_landing_page = true 
-
-  [[menu.main]]
-    name = "Impressum"
-    url = "impressum/"
-    weight = 100
-    [menu.main.params]
-      show_on_landing_page = false 
-  
-  [[menu.main]]
-    name = "Datenschutz"
-    url = "datenschutz/"
-    weight = 110
-    [menu.main.params]
-      show_on_landing_page = false 
-
-

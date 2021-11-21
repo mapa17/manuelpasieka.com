@@ -19,13 +19,23 @@
 			<p id="home-subtitle">{{.}}</p>
 			{{- end }}
 			{{- with .Site.Params.social }}
-			<div id="home-social">
-				{{ partialCached "social-icons.html" . }}
-			</div>
+				<div id="home-social">
+					{{ partialCached "social-icons.html" . }}
+				</div>
 			{{- end }}
 			<nav id="home-nav" class="site-nav">
 				{{ partialCached "menu.html" . }}
 			</nav>
+			{{ if .IsTranslated }}
+				<nav class="LangNav">
+					<div id="home-langnav">
+				{{ range .AllTranslations }}
+						<a href="{{ .Permalink }}" target="_blank" rel="noopener me" title="{{ .Language.LanguageName }}"><img src="{{ .Language.Params.icon }}" height="24"></a>
+				{{ end}}
+					</div>
+				</nav>
+			{{ end }}
+
 		</div>
 		<div id="home-footer">
 			<p>
