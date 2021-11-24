@@ -14,6 +14,9 @@
 	{{- end }}
 	<div id="spotlight" class="animated fadeIn">
 		<div id="home-center">
+			<div id="home-title">
+				<img src="{{ .Site.Params.Logo }}" width=200></img>
+			</div>
 			<h1 id="home-title">{{ .Site.Title }}</h1>
 			{{- with .Site.Params.homeSubtitle }}
 			<p id="home-subtitle">{{.}}</p>
