@@ -15,7 +15,7 @@ defaultContentLanguage = "de"
 [languages]
   [languages.en]
     title = "Manuel Pasieka"
-    homeSubtitle = "Leverage the power of machine learning for your business."
+    homeSubtitle = "Leverage the power of machine learning for your business"
     languageName = "en"
     contentDir = "content/en"
     weight = 2
