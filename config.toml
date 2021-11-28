@@ -1,4 +1,4 @@
-baseURL = "http://www.manuelpasieka.com"
+baseURL = "https://www.manuelpasieka.com"
 languageCode = "en-us"
 theme = "hermit"
 # enableGitInfo = true
