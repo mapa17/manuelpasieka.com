@@ -1,4 +1,5 @@
-baseURL = "http://manuelpasieka.com"
+#baseURL = "http://manuelpasieka.com"
+baseURL = "http://mapa17.github.io/manuelpasieka.com"
 languageCode = "en-us"
 theme = "hermit"
 # enableGitInfo = true
