@@ -26,9 +26,9 @@ that you need to overcome and what skills and resources you will require to succ
 It's challenging to find machine learning engineers that can understand business
 objectives and product design while at the same time having solid software
 engineering skills to develop data products using state of the art machine
-learning frameworks.
+learning frameworks, and the cloud infrastructure understanding to bring models
+into production at scale.
 
-With many years of experience in different industries and companies from
-startups to SMB's I can support your team and your business to develop solutions
-that apply the best machine learning methods and algorithms that will make your
-customers happy.
+I can support you in developing your product covering the full ML tech stack.
+Applying my expertise to help you with system architecture, a transition to a
+modern technology stack and developer training and hiring.

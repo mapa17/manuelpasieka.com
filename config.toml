@@ -30,10 +30,10 @@ defaultContentLanguage = "de"
         [languages.en.menu.main.params]
           show_on_landing_page = true 
 
-      [[languages.en.menu.main]]
-        name = "Projects"
-        url = "projects/"
-        weight = 20
+#      [[languages.en.menu.main]]
+#        name = "Projects"
+#        url = "projects/"
+#        weight = 20
 
       [[languages.en.menu.main]]
         name = "Austrian Ai Podcast"
@@ -60,10 +60,10 @@ defaultContentLanguage = "de"
         url = "services/"
         weight = 10
 
-      [[languages.de.menu.main]]
-        name = "Projekte"
-        url = "projects/"
-        weight = 20
+#      [[languages.de.menu.main]]
+#        name = "Projekte"
+#        url = "projects/"
+#        weight = 20
 
       [[languages.de.menu.main]]
         name = "Austrian Ai Podcast"
