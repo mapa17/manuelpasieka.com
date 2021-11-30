@@ -5,34 +5,34 @@ draft: false
 ---
 
 # Schulungen
-Maschinelles Lernen (ML) ist in aller Munde, doch wie können Sie es für ihr
-Unternehmen und ihre Kunden Nutzen? Was bedeutet die Entwicklungen auf dem
-Gebiet der Künstlichen Intelligenz (KI) für ihr Unternehmen, ihre Branche, und
-wie können Sie von Ihnen profitieren?
+Maschinelles Lernen (ML) ist in aller Munde, doch wie können Sie es für Ihr
+Unternehmen und Ihre Kunden Nutzen? Was bedeutet die Entwicklung auf dem Gebiet
+der Künstlichen Intelligenz (KI) für ihr Unternehmen, Ihre Branche, und wie
+können Sie von Ihnen profitieren?
 
-In Massgeschneiderten Schulungen kann ich ihnen diese und viele weiteren Fragen
-beantworten um sie zu unterschätzen das beste aus ML und KI für ihr Unternehmen
-heraus zu holen.
+In Maßgeschneiderten Schulungen kann ich Ihnen diese und viele weiteren Fragen
+beantworten, um Sie zu dabei zu unterstützen das beste aus dem Bereich der ML
+und KI für ihr Unternehmen heraus zu holen.
 
 # Machbarkeitsstudien
 Das Potenzial von ML für Ihre Produkte und Dienstleistungen ist enorm, aber wie
-eruieren Sie was mit vertretbarem Aufwand umsetzbar ist, und was
-Grundlagenforschung benötigt?
+eruieren Sie was mit vertretbarem Aufwand umsetzbar ist, und was noch
+Zukunftsmusik ist? 
 
-Mittels einer Machbarkeitsstudie welche Ich zugeschnitten für ihre
-Fragestellungen und Projekt Ideen anfertige, haben Sie alle informationen in der
-Hand um zu entscheiden welche Projekte umsetzbar sind, wo die größten Hürden
+Mittels einer Machbarkeitsstudie, welche ich zugeschnitten für Ihre
+Fragestellungen und Projektideen anfertige, haben Sie alle Informationen in der
+Hand, um zu entscheiden welche Projekte umsetzbar sind, wo die größten Hürden
 liegen und welches Personal und welche Fähigkeiten Sie dazu im Unternehmen
-brauchen werden.
+benötigen werden.
 
 # Entwicklung
-Es ist eine Herausforderung erfahrene Entwickler im Bereich des ML zu finden
-welche sowohl ein gutes Verständnis haben von Produktentwicklung und Business
-case als auch den neuesten technologien zu deren Umsetzung.
+Es ist eine Herausforderung, erfahrene Entwickler im Bereich des ML zu finden
+welche sowohl ein gutes Verständnis von Produktentwicklung und Business case als
+auch den neuesten Technologien und deren Umsetzung haben.
 
 Als erfahrener full stack ML Entwickler unterstütze ich Sie bei der
-Produktentwicklung vom erstellen neuer Vorhersage Modelle bis zu deren Betrieb
-und Monitoring in der cloud.
-Ich helfe Ihnen desweiteren dabei mit der passenden Technologie eine Architektur
-zu entwickeln welche ihren Anforderungen entspricht. Zu gutem Schluss stehe ich
-Ihnen zur Seite bei der Schulung und dem einstellen von neuen Mitarbeiten.
+Produktentwicklung vom Erstellen neuer Vorhersage-Modelle bis zu deren Betrieb
+und Monitoring in der cloud. Ich helfe Ihnen desweiteren dabei, mit der
+passenden Technologie eine Architektur zu entwickeln welche Ihren Anforderungen
+entspricht. Zu gutem Schluss stehe ich Ihnen bei der Schulung und dem einstellen
+von neuen Mitarbeitern zu verfügung.

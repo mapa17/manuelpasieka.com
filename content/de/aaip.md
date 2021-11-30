@@ -4,9 +4,12 @@ date: 2021-11-13T17:46:53Z
 draft: false 
 ---
 
-Auf dem Austrian Ai Podcast interviewe ich Experten der Künstlichen Intelligenz aus der Industrie, dem Akademsichen Sektor oder dem offentlichen Raum zu Ihren Tätigkeiten und Projekten. 
+Auf dem Austrian Ai Podcast interviewe ich Experten der Künstlichen Intelligenz
+aus Bereichen der Industrie, dem akademischen Sektor oder privaten Bereich zu
+Ihren Tätigkeiten und Projekten. 
 
-Der Podcast dient als Platform und Sprachrohr um auf zu zeigen was im Bereich der Künstlichen Intelligenz in Österreich existiert, und was möglich ist.
+Der Podcast dient als Plattform und Sprachrohr, um aufzuzeigen was im Bereich
+der Künstlichen Intelligenz in Österreich existiert, und was möglich ist.
 
 {{< rawhtml >}}
 <iframe src="https://open.spotify.com/embed/episode/2XHBMfJl85x5pqiFoi1Uqh?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
