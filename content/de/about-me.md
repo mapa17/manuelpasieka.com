@@ -21,9 +21,6 @@ Auftreten von sogenannten ‘emerging properties’ in solchen systemen.
 Für einen vollständigen Werdegang empfehle ich Ihnen meine
 [LinkedIn](https://linkedin.com/in/manuelpasieka) Seite.
 
-{{!-- und einen Blick auf
-meine [Projekte]({{< ref "/projects/" >}}). --}}
-
 \
 Haben Sie weitere Fragen? Dann schreiben Sie mir einfach eine email an:
 hello@manuelpasieka.com
