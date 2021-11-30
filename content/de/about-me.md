@@ -4,23 +4,25 @@ date: 2021-11-11
 ---
 
 {{< figure src="/img/profile.jpg" title="Manuel Pasieka" class="right" >}}
+Seit 2022 bin ich Freiberuflich tätig und unterstütze Kunden in der DACH Region
+bei der Entwicklung und Umsetzung von KI und ML Projekten.
 
-Ich helfe Ihnen das Potential der Künstlichen Intelligenz für Ihr Unternehmen zu
-nützen, um bessere Produkte und Dienstleistungen zu entwickeln, welche Ihre
-Kunden beeindrucken werden.
+Davor war ich mehr als 14 Jahre lang als Entwickler in verschiedenen Unternehmen,
+Startups und Forschungsinstituten tätig und habe Projekte sowohl im alleingang
+oder in Teams umgesetzt.
 
-Neben zwei Universitäts Ausbildungen im Bereich der verteilten Systeme und im
-Bereich der Künstlichen Intelligenz habe ihr mehrere Jahre Berufserfahrung
-sowohl in privaten als auch im akademischen Sektor.
+In diesen Jahren war mein Interesse stets auf das Verstehen von komplexen System
+und das entwickeln von effizienten Lösungen fokussiert.
 
-Ich habe in Unternehmen verschiedener größe gearbeitet, und habe sowohl Startups,
-als auch kleinen und mittleren Unternehmen geholfen neue Produkte und
-Dienstleistungen zu entwickeln.
+Im speziellen faszinieren mich selbst regulierende Multiagentensysteme und das
+Auftreten von sogenannten ‘emerging properties’ in solchen systemen.
 
 
 Für einen vollständigen Werdegang empfehle ich Ihnen meine
-[LinkedIn](https://linkedin.com/in/manuelpasieka) Seite, und einen Blick auf
-meine [Projekte]({{< ref "/projects/" >}}).
+[LinkedIn](https://linkedin.com/in/manuelpasieka) Seite.
+
+{{!-- und einen Blick auf
+meine [Projekte]({{< ref "/projects/" >}}). --}}
 
 \
 Haben Sie weitere Fragen? Dann schreiben Sie mir einfach eine email an:

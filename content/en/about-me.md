@@ -13,7 +13,9 @@ and another in machine learning. I have worked in small startups, consultancy co
 within and next to research labs, and product development companies.
 More details you can find on my [linkedin profile](https://linkedin.com/in/manuelpasieka).
 
+{{!--
 A selection of projects that I worked on you can find [here]({{< ref "/projects/" >}}).
+--}}
 
 \
 Do you have any questions or want to know more?\
