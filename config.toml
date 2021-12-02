@@ -47,7 +47,7 @@ defaultContentLanguage = "de"
   
   [languages.de]
     title = "Manuel Pasieka"
-    homeSubtitle = "Nützen Sie Machine Learning für ihr Unternehmen"
+    homeSubtitle = "Nützen Sie Machine Learning für Ihr Unternehmen"
     languageName = "de"
     contentDir =  "content/de"
     weight = 1
