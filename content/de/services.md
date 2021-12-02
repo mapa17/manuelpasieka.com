@@ -12,10 +12,11 @@ In maßgeschneiderten Schulungen kann ich Ihnen diese und viele weiteren Fragen 
 ## Machbarkeitsstudien
 Das Potenzial von ML für Ihre Produkte und Dienstleistungen ist enorm, aber wie eruieren Sie was mit vertretbarem Aufwand heute umsetzbar, und was noch Zukunftsmusik ist? 
 
-Mittels einer Machbarkeitsstudie, welche ich zugeschnitten für Ihre Fragestellungen und Projektideen anfertige, haben Sie alle Informationen in der Hand, um zu entscheiden welche Projekte mit welchem Aufwand realisierbar sind, wo die größten Hürden liegen und welches Personal und welche Fähigkeiten Sie dazu im Unternehmen benötigen werden.
+Mittels einer Machbarkeitsstudie, welche ich zugeschnitten für Ihre Fragestellungen und Projektideen anfertige, haben Sie alle Informationen in der Hand, um zu entscheiden welche Projekte mit welchem Aufwand realisierbar sind, wo die größten Hürden liegen und welches Personal und welche Fähigkeiten Sie dazu im Unternehmen benötigen.
 
 ## Entwicklung
-Es ist eine Herausforderung, erfahrene ML Entwickler zu finden welche sowohl ein gutes Verständnis von Produktentwicklung, Business Anwendung und den neuesten Technologien besitzen.
+Es ist eine Herausforderung, erfahrene ML-Entwickler zu finden welche sowohl ein gutes Verständnis von Produktentwicklung, Business-Anwendung und den neuesten Technologien besitzen.
 
-Als erfahrener full-stack ML Entwickler unterstütze ich Sie bei der Produktentwicklung vom Erstellen neuer Vorhersage-Modelle, bis zu deren Betrieb und Überwachung in der Cloud.
-Ich helfe Ihnen dabei, mit der passenden Technologie eine Architektur zu entwickeln welche Ihren Anforderungen entspricht, und ein Team zusammen zu stellen das dies umsetzen kann und für die Zukunft gewappnet ist.
+Als erfahrener Fullstack-ML-Entwickler helfe ich Ihnen nicht nur in der Entwicklung neuer Vorhersage-Modelle, sondern auch in der Planung einer Architektur, welche Ihren Anforderungen entspricht. Ich unterstütze Sie dabei eine Cloud Infrastruktur aufzubauen, um diese Modelle kontinuierlich zu aktualisieren, auszurollen, und zu überwachen.
+
+

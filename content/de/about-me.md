@@ -13,7 +13,7 @@ Neben zwei Masterabschlüssen in den Bereichen verteilte Systeme und Künstliche
 Meinen vollständigen Werdegang finden Sie auf [LinkedIn](https://linkedin.com/in/manuelpasieka).
 
 \
-Habe ich Ihr Interesse geweckt, oder haben Sie weitere Fragen? Dann schreiben Sie mir einfach eine email an: hello@manuelpasieka.com
+Habe ich Ihr Interesse geweckt, oder haben Sie weitere Fragen? Dann schreiben Sie mir einfach eine E-Mail an: hello@manuelpasieka.com
 
 \
 [Impressum]({{< ref "impressum.md" >}})

@@ -6,32 +6,31 @@ title: Impressum
 
 {{< rawhtml >}}
 <p class="adsimple-121876675">Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung und Offenlegungspflicht laut §25 Mediengesetz.</p>
-<p class="adsimple-121876675">Manuel Pasieka<br />Manuel Pasieka<br />Musterstrasse 1, Stiege 1 Tür 1, <br />1234 Musterhausen, <br />Österreich</p>
+<p class="adsimple-121876675">Manuel Pasieka<br /><br/>Jedleseer Strasse 75, Stiege 1 Tür 13, <br />1210 Wien, <br />Österreich</p>
 <p class="adsimple-121876675">
-<strong>Unternehmensgegenstand:</strong> IT Dienstleistungen<br />
-<strong>UID-Nummer:</strong> ATU12345678<br />
-<strong>GLN:</strong> 1234567891234<br />
-<strong>GISA:</strong> 12345678<br />
+<strong>Unternehmensgegenstand:</strong> Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik <br />
+<strong>UID-Nummer:</strong> ATU77519829 <br />
+<strong>GLN:</strong> 9110009409498 <br />
 <strong>Firmenbuchnummer:</strong> 123456a<br />
 <strong>Firmenbuchgericht:</strong> Musterhausen<br />
-<strong>Firmensitz:</strong> 1234 Musterhausen</p>
+<strong>Firmensitz:</strong> Jedleseer Strasse 75, Stiege 1 Tür 13, <br />1210 Wien, <br />Österreich </p>
 <p class="adsimple-121876675">
-<strong>Tel.:</strong> 01234/56789<br />
-<strong>Fax:</strong> 01234/56789-0<br />
-<strong>E-Mail:</strong> <a href="mailto:office@musterfirma.com">office@musterfirma.com</a>
+<strong>Tel.:</strong> 0681/81613940<br />
+<strong>E-Mail:</strong> <a href="mailto:hello@manuelpasieka.com">hello@manuelpasieka.com</a>
 </p>
 <p class="adsimple-121876675">
 <strong>Mitglied bei:</strong> WKO, Landesinnung, etc.<br />
 <strong>Berufsrecht:</strong> Gewerbeordnung: www.ris.bka.gv.at</p>
 <p class="adsimple-121876675">
-<strong>Aufsichtsbehörde/Gewerbebehörde:</strong> Bezirkshauptmannschaft Musterhausen<br />
-<strong>Berufsbezeichnung:</strong> Webdesigner, Grafiker<br />
+<strong>Aufsichtsbehörde/Gewerbebehörde:</strong> Magistratisches Bezirksamt für den 21. Bezirk<br />
+<strong>Berufsbezeichnung:</strong> <br />
 <strong>Verleihungsstaat:</strong> Österreich</p>
 <p class="adsimple-121876675">
 <strong>Kontaktdaten des Verantwortlichen für Datenschutz</strong>
-<br />Sollten Sie Fragen zum Datenschutz haben, finden Sie nachfolgend die Kontaktdaten der verantwortlichen Person bzw. Stelle:<br />Musterfirma GmbH<br />
-Musterstraße 47, 12312 Musterstadt, Musterland<br />Vertretungsberechtigt: Markus Mustermann<br />E-Mail-Adresse: <a href="mailto:office@musterfirma.com">office@musterfirma.com</a>
-<br />Telefon: 01234/56789<br />Impressum: <a href="https://www.testfirma.at/impressum/" target="_self" rel="noopener">https://www.testfirma.at/impressum/</a>
+<br />Sollten Sie Fragen zum Datenschutz haben, finden Sie nachfolgend die Kontaktdaten der verantwortlichen Person bzw. Stelle:<br /><br />
+Jedleseer Strasse 75, Stiege 1, Tür 13, <br />1210 Wien, <br />Österreich</p>
+<br />Vertretungsberechtigt: Manuel Pasieka<br />E-Mail-Adresse: <a href="mailto:hello@manuelpasieka.com">hello@manuelpasieka.com</a>
+<br />Telefon: 0681/81613940<br />Impressum: <a href="https://www.manuelpasieka.at/impressum/" target="_self" rel="noopener">https://www.manuelpasieka.at/impressum/</a>
 </p>
 <h2 id="eu-streitschlichtung" class="adsimple-121876675">EU-Streitschlichtung</h2>
 <p>Gemäß Verordnung über Online-Streitbeilegung in Verbraucherangelegenheiten (ODR-Verordnung) möchten wir Sie über die Online-Streitbeilegungsplattform (OS-Plattform) informieren.<br />
