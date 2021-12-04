@@ -33,7 +33,7 @@
 				<nav class="LangNav">
 					<div id="home-langnav">
 				{{ range .AllTranslations }}
-						<a href="{{ .Permalink }}" target="_blank" rel="noopener me" title="{{ .Language.LanguageName }}"><img src="{{ .Language.Params.icon }}" height="24"></a>
+						<a href="{{ .Permalink }}" target="_self" rel="noopener me" title="{{ .Language.LanguageName }}"><img src="{{ .Language.Params.icon }}" height="24"></a>
 				{{ end}}
 					</div>
 				</nav>
