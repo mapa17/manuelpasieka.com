@@ -14,7 +14,7 @@ perspective to specific technologies in machine learning.
 ## Feasibility Study
 The applications of ML to improve business are huge, but how do you apply them
 to your company and your specific product? How do you know which projects are
-feasible with a reasonable amount of afford and which would require years of
+feasible with a reasonable amount of effort and which would require years of
 research?
 
 I will provide you with the information you need to make the right decision  on

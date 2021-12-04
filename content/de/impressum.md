@@ -6,7 +6,7 @@ title: Impressum
 
 {{< rawhtml >}}
 <p class="adsimple-121876675">Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung und Offenlegungspflicht laut §25 Mediengesetz.</p>
-<p class="adsimple-121876675">Manuel Pasieka<br /><br/>Jedleseer Strasse 75, Stiege 1 Tür 13, <br />1210 Wien, <br />Österreich</p>
+<p class="adsimple-121876675">Manuel Pasieka<br/>Jedleseer Strasse 75, Stiege 1 Tür 13, <br />1210 Wien, <br />Österreich</p>
 <p class="adsimple-121876675">
 <strong>Unternehmensgegenstand:</strong> Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik <br />
 <strong>UID-Nummer:</strong> ATU77519829 <br />
@@ -27,9 +27,9 @@ title: Impressum
 <strong>Verleihungsstaat:</strong> Österreich</p>
 <p class="adsimple-121876675">
 <strong>Kontaktdaten des Verantwortlichen für Datenschutz</strong>
-<br />Sollten Sie Fragen zum Datenschutz haben, finden Sie nachfolgend die Kontaktdaten der verantwortlichen Person bzw. Stelle:<br /><br />
+<br />Sollten Sie Fragen zum Datenschutz haben, finden Sie nachfolgend die Kontaktdaten der verantwortlichen Person bzw. Stelle:<br />Manuel Pasieka<br />
 Jedleseer Strasse 75, Stiege 1, Tür 13, <br />1210 Wien, <br />Österreich</p>
-<br />Vertretungsberechtigt: Manuel Pasieka<br />E-Mail-Adresse: <a href="mailto:hello@manuelpasieka.com">hello@manuelpasieka.com</a>
+<br />E-Mail-Adresse: <a href="mailto:hello@manuelpasieka.com">hello@manuelpasieka.com</a>
 <br />Telefon: 0681/81613940<br />Impressum: <a href="https://www.manuelpasieka.at/impressum/" target="_self" rel="noopener">https://www.manuelpasieka.at/impressum/</a>
 </p>
 <h2 id="eu-streitschlichtung" class="adsimple-121876675">EU-Streitschlichtung</h2>
