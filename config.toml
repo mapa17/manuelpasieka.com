@@ -101,7 +101,7 @@ defaultContentLanguage = "de"
   # Main Logo, is used on the front page
   logo = "/img/Logo_300px.png"
   # Will be used in the main navigation menu
-  smallLogo = "/img/Logo_64px.png"
+  smallLogo = "/img/Logo_cutout.png"
 
 
 
