@@ -19,5 +19,6 @@ Es ist eine Herausforderung, erfahrene ML-Entwickler/Innen zu finden welche sowo
 
 Als erfahrener Fullstack-ML-Entwickler helfe ich Ihnen nicht nur in der Entwicklung neuer Vorhersage-Modelle, sondern auch in der Planung einer Architektur, welche Ihren Anforderungen entspricht. Ich unterstütze Sie dabei eine Cloud Infrastruktur aufzubauen, um diese Modelle kontinuierlich zu aktualisieren, auszurollen, und zu überwachen.
 
-
-
+\
+\
+Habe ich Ihr Interesse geweckt, oder haben Sie weitere Fragen? Dann schreiben Sie mir einfach eine E-Mail an: hello@manuelpasieka.com
