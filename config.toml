@@ -11,6 +11,9 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
 # googleAnalytics = "UA-123-45"
 # disqusShortname = "yourdiscussshortname"
 
+# Will be used in the main navigation menu
+smallLogo = "/img/Logo_64px.png"
+
 defaultContentLanguage = "de"
 [languages]
   [languages.en]
