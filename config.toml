@@ -11,9 +11,6 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
 # googleAnalytics = "UA-123-45"
 # disqusShortname = "yourdiscussshortname"
 
-# Will be used in the main navigation menu
-smallLogo = "/img/Logo_64px.png"
-
 defaultContentLanguage = "de"
 [languages]
   [languages.en]
@@ -101,7 +98,12 @@ defaultContentLanguage = "de"
   # images = [""]
   themeColor = "#494f5c"
 
+  # Main Logo, is used on the front page
   logo = "/img/Logo_300px.png"
+  # Will be used in the main navigation menu
+  smallLogo = "/img/Logo_64px.png"
+
+
 
   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""  # Homepage background-image URL
