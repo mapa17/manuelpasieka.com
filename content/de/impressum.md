@@ -6,7 +6,7 @@ title: Impressum
 
 {{< rawhtml >}}
 <p class="adsimple-121876675">Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung und Offenlegungspflicht laut §25 Mediengesetz.</p>
-<p class="adsimple-121876675">Manuel Pasieka<br/>Jedleseer Strasse 75, Stiege 1 Tür 13, <br />1210 Wien, <br />Österreich</p>
+<p class="adsimple-121876675">Manuel Pasieka<br/>Jedleseer Strasse 75<br />1210 Wien, <br />Österreich</p>
 <p class="adsimple-121876675">
 <strong>Unternehmensgegenstand:</strong> Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik <br />
 <strong>UID-Nummer:</strong> ATU77519829 <br />
@@ -28,7 +28,7 @@ title: Impressum
 <p class="adsimple-121876675">
 <strong>Kontaktdaten des Verantwortlichen für Datenschutz</strong>
 <br />Sollten Sie Fragen zum Datenschutz haben, finden Sie nachfolgend die Kontaktdaten der verantwortlichen Person bzw. Stelle:<br />Manuel Pasieka<br />
-Jedleseer Strasse 75, Stiege 1, Tür 13, <br />1210 Wien, <br />Österreich</p>
+Jedleseer Strasse 75<br />1210 Wien, <br />Österreich</p>
 <br />E-Mail-Adresse: <a href="mailto:hello@manuelpasieka.com">hello@manuelpasieka.com</a>
 <br />Telefon: 0681/81613940<br />Impressum: <a href="https://www.manuelpasieka.at/impressum/" target="_self" rel="noopener">https://www.manuelpasieka.at/impressum/</a>
 </p>
@@ -46,13 +46,5 @@ Verbraucher haben die Möglichkeit, Beschwerden an die Online Streitbeilegungspl
 <h2 id="urheberrechtshinweis" class="adsimple-121876675">Urheberrechtshinweis</h2>
 <p>Alle Inhalte dieser Webseite (Bilder, Fotos, Texte, Videos) unterliegen dem Urheberrecht. Bitte fragen Sie uns bevor Sie die Inhalte dieser Website verbreiten, vervielfältigen oder verwerten wie zum Beispiel auf anderen Websites erneut veröffentlichen. Falls notwendig, werden wir die unerlaubte Nutzung von Teilen der Inhalte unserer Seite rechtlich verfolgen.</p>
 <p>Sollten Sie auf dieser Webseite Inhalte finden, die das Urheberrecht verletzen, bitten wir Sie uns zu kontaktieren.</p>
-<h2 id="bildernachweis" class="adsimple-121876675">Bildernachweis</h2>
-<p>Die Bilder, Fotos und Grafiken auf dieser Webseite sind urheberrechtlich geschützt.</p>
-<p>Die Bilderrechte liegen bei den folgenden Fotografen und Unternehmen:</p>
-<ul class="adsimple-121876675">
-<li class="adsimple-121876675">Fotograf Mustermann</li>
-</ul>
-<p>Alle Texte sind urheberrechtlich geschützt.</p>
-<p style="margin-top:15px">Quelle: Erstellt mit dem <a href="https://www.adsimple.at/impressum-generator/" title="Impressum Generator von AdSimple für Österreich">Impressum Generator</a> von AdSimple</p>
 
 {{< /rawhtml >}}
