@@ -17,7 +17,7 @@ Mittels einer Machbarkeitsstudie, welche ich zugeschnitten für Ihre Fragestellu
 ## Entwicklung
 Es ist eine Herausforderung, erfahrene ML-Entwickler/Innen zu finden welche sowohl ein gutes Verständnis von Produktentwicklung, Business-Anwendung und den neuesten Technologien besitzen.
 
-Als erfahrener Fullstack-ML-Entwickler helfe ich Ihnen nicht nur in der Entwicklung neuer Vorhersage-Modelle, sondern auch in der Planung einer Architektur, welche Ihren Anforderungen entspricht. Ich unterstütze Sie dabei eine Cloud Infrastruktur aufzubauen, um diese Modelle kontinuierlich zu aktualisieren, auszurollen, und zu überwachen.
+Als erfahrener Full-Stack-ML-Entwickler helfe ich Ihnen nicht nur in der Entwicklung neuer Vorhersage-Modelle, sondern auch in der Planung einer Architektur, welche Ihren Anforderungen entspricht. Ich unterstütze Sie dabei eine Cloud Infrastruktur aufzubauen, um diese Modelle kontinuierlich zu aktualisieren, auszurollen, und zu überwachen.
 
 \
 \
