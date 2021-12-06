@@ -19,7 +19,7 @@ Did I spawn your interest, do you have any questions or want to know more?
 Drop me an email at hello@manuelpasieka.com
 
 \
-[Impressum]({{< ref "impressum.md" >}})
+[Legal Notice]({{< ref "legalnotice.md" >}})
 
 \
-[Datenschutz]({{< ref "datenschutz.md" >}})
+[Privacy Policy]({{< ref "privacypolicy.md" >}})
