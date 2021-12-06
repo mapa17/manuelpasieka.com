@@ -14,10 +14,10 @@ Austria.
 ## Data privacy officer
 The responsible entity for purposes of the Data Privacy Act is:
 
-- Manuel Pasieka
-- Jedleseer Strasse 75
-- 1210 Vienna
-- Austria
+Manuel Pasieka
+Jedleseer Strasse 75
+1210 Vienna
+Austria
   
 If you have questions or concerns about data privacy, you are welcome to contact us at hello@manuelpasieka.com
 
