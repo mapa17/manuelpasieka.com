@@ -1,7 +1,7 @@
 ---
 author: "Manuel Pasieka"
 date: 2021-11-11
-title: Impressum 
+title: Legal notice 
 ---
 
 Manuel Pasieka
