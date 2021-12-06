@@ -20,5 +20,6 @@ It's challenging to find machine learning engineers that can understand business
 As an experienced Full-Stack ML Engineer, I can support you not only in the development of new models but in the design of system architecture and a technology stack that fits your needs. Building of cloud solutions that enable model training, deployment, and monitoring at scale.
 
 \
-Did I spawn your interest, or do you have any questions or want to know more?\
+Did this spawn your interest, do you have any questions or want to know more?
+\
 Drop me an email at hello@manuelpasieka.com
