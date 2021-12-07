@@ -16,7 +16,6 @@ Das Potenzial von ML für Ihre Produkte und Dienstleistungen ist enorm, aber wie
 
 Mittels einer Machbarkeitsstudie, welche ich zugeschnitten für Ihre Fragestellungen und Projektideen anfertige, haben Sie alle Informationen in der Hand. So haben sie eine solide Grundlage, um zu entscheiden welche Projekte mit welchem Aufwand realisierbar sind, wo die größten Hürden liegen und welches Personal und welche Fähigkeiten Sie dazu im Unternehmen benötigen.
 
-\
 
 ## Entwicklung
 Es ist eine Herausforderung, erfahrene ML-Entwickler/Innen zu finden welche sowohl ein gutes Verständnis von Produktentwicklung, Business-Anwendung und den neuesten Technologien besitzen.
