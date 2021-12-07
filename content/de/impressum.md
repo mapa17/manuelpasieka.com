@@ -13,7 +13,7 @@ title: Impressum
 <strong>GLN:</strong> 9110009409498 <br />
 <strong>Firmenbuchnummer:</strong> 123456a<br />
 <strong>Firmenbuchgericht:</strong> Musterhausen<br />
-<strong>Firmensitz:</strong> Jedleseer Strasse 75, Stiege 1 Tür 13, <br />1210 Wien, <br />Österreich </p>
+<strong>Firmensitz:</strong> Jedleseer Strasse 75, Stiege 1 Tür 13 <br />1210 Wien, <br />Österreich </p>
 <p class="adsimple-121876675">
 <strong>Tel.:</strong> 0681/81613940<br />
 <strong>E-Mail:</strong> <a href="mailto:hello@manuelpasieka.com">hello@manuelpasieka.com</a>
