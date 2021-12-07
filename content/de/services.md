@@ -11,8 +11,6 @@ In maßgeschneiderten Schulungen kann ich Ihnen diese und viele weiteren Fragen 
 
 \
 
-{{ }}
-
 ## Machbarkeitsstudien
 Das Potenzial von ML für Ihre Produkte und Dienstleistungen ist enorm, aber wie eruieren Sie was mit vertretbarem Aufwand heute umsetzbar, und was noch Zukunftsmusik ist? 
 
