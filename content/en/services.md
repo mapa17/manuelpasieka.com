@@ -26,8 +26,7 @@ As an experienced Full-Stack ML Engineer, I can support you not only in the deve
 {{< rawhtml >}}
 <br>
 {{< rawhtml >}}
-\
-\
+
 Did this spawn your interest, do you have any questions or want to know more?
 
 \
