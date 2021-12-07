@@ -6,7 +6,7 @@ date: 2021-11-11
 {{< figure src="/img/profile.jpg" title="Manuel Pasieka" class="right" >}}
 Seit 2022 bin ich freiberuflich tätig und unterstütze Kunden in der DACH Region bei der Entwicklung und Umsetzung von Machine Learning Projekten.
 
-Davor war ich mehr als 15 Jahre lang als Entwickler in verschiedenen Unternehmen, Startups und Forschungsinstituten tätig und habe Projekte sowohl im Alleingang oder in Teams umgesetzt.
+Davor war ich mehr als 15 Jahre lang als Entwickler in verschiedenen Unternehmen, Startups und Forschungsinstituten tätig und habe Projekte sowohl im Alleingang als auch in Teams umgesetzt.
 
 Neben zwei Masterabschlüssen in den Bereichen verteilte Systeme und Künstliche Intelligenz, war ich als Data Scientist und als Machine Learning Engineer tätig.
 
