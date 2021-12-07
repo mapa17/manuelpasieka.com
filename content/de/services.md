@@ -9,17 +9,14 @@ Maschinelles Lernen (ML) ist in aller Munde, doch wie können Sie es für Ihr Un
 
 In maßgeschneiderten Schulungen kann ich Ihnen diese und viele weiteren Fragen beantworten, um Sie dabei zu unterstützen das Beste aus dem Bereich der ML und KI für Ihr Unternehmen herauszuholen.
 
-\
+ 
  
 ## Machbarkeitsstudien
 Das Potenzial von ML für Ihre Produkte und Dienstleistungen ist enorm, aber wie eruieren Sie was mit vertretbarem Aufwand heute umsetzbar, und was noch Zukunftsmusik ist? 
 
-\
- 
-
 Mittels einer Machbarkeitsstudie, welche ich zugeschnitten für Ihre Fragestellungen und Projektideen anfertige, haben Sie alle Informationen in der Hand. So haben sie eine solide Grundlage, um zu entscheiden welche Projekte mit welchem Aufwand realisierbar sind, wo die größten Hürden liegen und welches Personal und welche Fähigkeiten Sie dazu im Unternehmen benötigen.
 
-\
+ 
  
 
 ## Entwicklung
