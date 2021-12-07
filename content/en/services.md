@@ -10,12 +10,14 @@ Machine Learning (ML) has moved from a mere buzzword to a key ingredient of any 
 I will give workshops for you that will bring you up to speed with what really works in ML and how you can make the most of it for business. 
 
 <br>
+<br>
 
 ## Feasibility Study
 The applications of ML to improve business are huge, but how do you apply them to your specific product and services? How do you decide which projects to proceed with, because they are feasible with a reasonable amount of effort and which would require years of research?
 
 I will provide you with the information you need to make the right decision by performing a **feasibility study** of your company and ML projects that will highlight the biggest challenges that you need to overcome and what skills and resources you will require to succeed.
 
+<br>
 <br>
 
 ## Machine Learning & Software Engineering
