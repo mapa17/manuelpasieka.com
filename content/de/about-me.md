@@ -16,9 +16,8 @@ Meinen vollständigen Werdegang finden Sie auf <a href="https://linkedin.com/in/
 Habe ich Ihr Interesse geweckt, oder haben Sie weitere Fragen? Dann schreiben Sie mir einfach eine E-Mail an: hello@manuelpasieka.com
 
 </br>
+</br>
 
 [Impressum]({{< ref "impressum.md" >}})
-
-</br>
 
 [Datenschutz]({{< ref "datenschutz.md" >}})
