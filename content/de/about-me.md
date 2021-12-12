@@ -10,7 +10,7 @@ Davor war ich mehr als 15 Jahre lang als Entwickler in verschiedenen Unternehmen
 
 Neben zwei Masterabschlüssen in den Bereichen verteilte Systeme und Künstliche Intelligenz, war ich als Data Scientist und als Machine Learning Engineer tätig.
 
-Meinen vollständigen Werdegang finden Sie auf <a href="https://linkedin.com/in/manuelpasieka" target="_blank">LinkedIn</a> oder in meinem <a href="https://github.com/mapa17/CV/raw/master/Manuel_Pasieka.pdf" traget="_blank">CV</a>.
+Meinen vollständigen Werdegang finden Sie auf <a href="https://linkedin.com/in/manuelpasieka" target="_blank">LinkedIn</a> oder in meinem <a href="https://github.com/mapa17/CV/raw/master/Manuel_Pasieka.pdf" target="_blank">CV</a>.
 
 </br>
 Habe ich Ihr Interesse geweckt, oder haben Sie weitere Fragen? Dann schreiben Sie mir einfach eine E-Mail an: hello@manuelpasieka.com
