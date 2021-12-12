@@ -11,7 +11,7 @@ Prior I have been working for 15 years as an Engineer in a variety of companies 
 
 I have one master's degree in "parallel and distributed computing" and another one in "Artificial Intelligence" and worked as a Senior Data Scientist and Machine Learning Engineer.
 
-My full resume you can find on my [linkedin profile](https://linkedin.com/in/manuelpasieka) or in my [CV](https://github.com/mapa17/CV/blob/master/Manuel_Pasieka.pdf).
+My full resume you can find on my [linkedin profile](https://linkedin.com/in/manuelpasieka) or in my [CV](https://github.com/mapa17/CV/raw/master/Manuel_Pasieka.pdf).
 
 \
 Did I spawn your interest, do you have any questions or want to know more?
