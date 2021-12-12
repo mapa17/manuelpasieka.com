@@ -9,7 +9,7 @@ Since 2022 I am helping companies in the DACH region to leverage the power of ma
 
 Prior I have been working for 15 years as an Engineer in a variety of companies ranging from Startups, Research Institutes to SMB's. Solving challenging tasks in teams or by myself.
 
-I have one master's degree in "parallel and distributed computing" and another one in "Artificial Intelligence" and worked as a Senior Data Scientist and Machine Learning Engineer.
+I have one master's degree in "Parallel and Distributed Computing" and another one in "Artificial Intelligence" and worked as a Senior Data Scientist and Machine Learning Engineer.
 
 My full resume you can find on my <a href="https://linkedin.com/in/manuelpasieka" target="_blank">LinkedIn Profile</a> or in my <a href="https://github.com/mapa17/CV/raw/master/Manuel_Pasieka.pdf" traget="_blank">CV</a>.
 
