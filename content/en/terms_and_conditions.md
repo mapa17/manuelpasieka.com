@@ -1,5 +1,5 @@
 ---
-title: "Geenral Terms and Conditions"
+title: "General Terms and Conditions"
 date: 2021-25-12
 ---
 
