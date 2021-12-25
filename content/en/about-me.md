@@ -20,3 +20,4 @@ Did I spawn your interest, do you have any questions or want to know more? Drop 
 
 [Legal Notice]({{< ref "legalnotice.md" >}})
 [Privacy Policy]({{< ref "privacypolicy.md" >}})
+[Terms and Conditions]({{< ref "terms_and_conditions.md" >}})
