@@ -19,3 +19,4 @@ Habe ich Ihr Interesse geweckt, oder haben Sie weitere Fragen? Dann schreiben Si
 
 [Impressum]({{< ref "impressum.md" >}})
 [Datenschutz]({{< ref "datenschutz.md" >}})
+[AGB]({{< ref "agb.md" >}})
