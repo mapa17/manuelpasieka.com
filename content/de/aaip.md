@@ -10,6 +10,12 @@ Der Podcast ist eine Plattform, um aufzuzeigen was im Bereich der Künstlichen I
 
 
 {{< rawhtml >}}
+<iframe src="https://open.spotify.com/embed/episode/18MWEVxho4dr74bhLC3BCm?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+<iframe src="https://open.spotify.com/embed/episode/5YrZwUkAT2OtPmbv9sHqex?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+<iframe src="https://open.spotify.com/embed/episode/1xxSIeh3tOBaW42759bjUP?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
 <iframe src="https://open.spotify.com/embed/episode/2XHBMfJl85x5pqiFoi1Uqh?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
 <iframe src="https://open.spotify.com/embed/episode/7pbyPUSXsE7FxKWSqdr0wb?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
