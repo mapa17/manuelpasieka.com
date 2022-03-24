@@ -13,7 +13,7 @@ I have one master's degree in "Parallel and Distributed Computing" and another o
 
 My full resume you can find on my <a href="https://linkedin.com/in/manuelpasieka" target="_blank">LinkedIn Profile</a> or in my <a href="https://github.com/mapa17/CV/raw/master/Manuel_Pasieka.pdf" target="_blank">CV</a>.
 
-Did I spawn your interest, do you have any questions or want to know more? Drop me an email at hello@manuelpasieka.com
+Did I spawn your interest, do you have any questions or want to know more? Drop me an email at contact@manuelpasieka.com
 
 </br>
 </br>

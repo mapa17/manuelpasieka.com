@@ -10,6 +10,8 @@ Der Podcast ist eine Plattform, um aufzuzeigen was im Bereich der Künstlichen I
 
 
 {{< rawhtml >}}
+<iframe src="https://open.spotify.com/embed/episode/6OniRdpeK10JhDEvUhG3bj?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
 <iframe src="https://open.spotify.com/embed/episode/3Ul54MHGMvqR4J5OvWfKQC?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
 <iframe src="https://open.spotify.com/embed/episode/4BAKf4lbaXfwzNBHXvBEVE?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
