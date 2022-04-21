@@ -4,8 +4,10 @@ date: 2022-04-21T00:00:00Z
 draft: false
 ---
 
-In this blog post, I am going to show you how to deploy an AWS instance
-with a Machine Learning development environment using [Terraform](https://www.terraform.io/intro).
+In this blog post, you are going to learn, how to deploy an AWS instance
+with a python Machine Learning development environment using [Terraform](https://www.terraform.io/intro).
+So you should be able to deploy your next cloud based Machine Learning environment
+fresh in less than 5 minutes.
 
 All scripts used in this tutorial are available on github as part of the [onomatico](https://github.com/mapa17/onomatico) project.
 
@@ -13,9 +15,7 @@ All scripts used in this tutorial are available on github as part of the [onomat
 To follow the tutorial and use the Terraform script provided, you need 
 the following.
 
-AWS account and user credentials: You can create an AWS user for free [here](https://portal.aws.amazon.com/billing/signup) and in addition, you need to have a private/public key pair that is associated with your AWS user. On [how to create key pairs look](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) and how to [associate it with your AWS user](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws). 
-
-**Note: If you want to run p2.xlarge instances make sure that you have increased your quota to at least 4. See [How to increase vCPU limits](https://aws.amazon.com/de/premiumsupport/knowledge-center/ec2-on-demand-instance-vcpu-increase/)**
+* AWS account and user credentials: You can create an AWS user for free [here](https://portal.aws.amazon.com/billing/signup) and in addition, you need to have a private/public key pair that is associated with your AWS user. On [how to create key pairs look](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) and how to [associate it with your AWS user](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws. **Note: If you want to run p2.xlarge instances make sure that you have increased your quota to at least 4. See [How to increase vCPU limits](https://aws.amazon.com/de/premiumsupport/knowledge-center/ec2-on-demand-instance-vcpu-increase/)**
 
 * Conda Environment: I highly recommend using a virtual environment like conda to install all tools and libraries that you are working with. Get miniconda installation for your platform [here](https://docs.conda.io/en/latest/miniconda.html)
 
