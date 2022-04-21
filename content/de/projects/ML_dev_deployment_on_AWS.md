@@ -7,7 +7,9 @@ draft: false
 In this blog post, I am going to show you how to deploy an AWS instance
 with a Machine Learning development environment using [Terraform](https://www.terraform.io/intro).
 
-# Pre-Requisites
+All scripts used in this tutorial are available on github as part of the [onomatico](https://github.com/mapa17/onomatico) project.
+
+## Pre-Requisites
 To follow the tutorial and use the Terraform script provided, you need 
 the following.
 
@@ -21,7 +23,7 @@ AWS account and user credentials: You can create an AWS user for free [here](htt
 
 * Example project: The example project that contains the terraform and other scripts you can with git directly (install with conda if you should not have git). ```git clone https://github.com/mapa17/onomatico.git```
 
-# Overview
+## Overview
 Modern Infrastructure management is relying heavily on the concept of [infrastructure as code](https://stackify.com/what-is-infrastructure-as-code-how-it-works-best-practices-tutorials/) and its tooling. In our case, we are going to make use of [Terraform](https://www.terraform.io/intro) as the "infrastructure as code" software framework.
 
 This means that we have a terraform script (part of the example project in onomatico/aws_instance.tf) that defines what infrastructure we want to create on AWS.
@@ -30,7 +32,7 @@ In addition, the script applies another bash script (onomatico/setup_instance.sh
 
 Now the overall picture is clear, let's dive into the details.
 
-# Choosing the right cloud instance
+## Choosing the right cloud instance
 In this tutorial, we are making use of AWS EC2 as the cloud provider of our choice, but no one likes to be vendor locked, and one of the benefits of a platform like Terraform is its multi-cloud capability, meaning that one can deploy and manage infrastructure on different cloud providers by, in the best case, only adapting some of your terraform scripts slightly.
 
 Something that Terraform does not do for you, is to select the best **instance type** and **AMI** for your project. 
@@ -46,7 +48,6 @@ There is unfortunately no simple way to identify the AMI ID one needs to select 
 Defining and using the Terraform configuration
 We define the instance and how it should be setup through the following Terraform configuration file (onomatico/aws_instance.tf)
 
-[INCLDUE onomatico/aws_instance.tf] 
 ```python
 ################################ User variables ################################
 
@@ -182,7 +183,7 @@ export AWS_DEFAULT_REGION=eu-central-1
 
 The last thing that is missing is the location of your public and private key pair that is associated with your AWS user (ie. the user that is specified in the AWS access and secret key with the permissions to create instances and connect to them). The location of your keys on your local host has to be specified as user variables at the top of the terraform configuration (variables **prv_key_path** and **pub_key_path**).
 
-# Configuring the cloud instance for an ML Project
+## Configuring the cloud instance for an ML Project
 After Terraform has created the AWS instance it runs with the select AMI image that in our case is an AWS optimized Linux installation with the Nvidia drivers and libraries (i.e. Cuda) to support GPU hardware acceleration, but nothing more.
 
 To be able to use this instance as an ML development machine we need our ML libraries and tooling installed. As always I recommend conda + pip das the virtual environment and package management systems.
@@ -242,7 +243,7 @@ Next are some settings that will make sure to log all output created from this s
 
 The last part of the script is executing a series of shell commands that download, install and configure conda, plus the project and its dependencies. We make sure to run those commands as a normal user, as the script itself is executed by cloud-init as root.
 
-# Making sure that terraform waits for the instance to complete its setup
+## Making sure that terraform waits for the instance to complete its setup
 The bash script that we use to configure your new instance is executed through AWS standard [cloud-init](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) 
 by specifying the content of the script as the parameter `user_data` in the AWS instance configuration in Terraform.
 
@@ -281,7 +282,7 @@ You can than access the machine with the default AWS user and your private ssh k
 ssh -i ~/.ssh/aws_dev ec2-user@3.67.40.126
 ```
 
-# How to resolve errors on the way
+## How to resolve errors on the way
 The infrastructure automation you learned in this tutorial has two main sources of possible errors.
 
 The Terraform configuration and the bash script that is used to configure the project environment.
@@ -304,7 +305,7 @@ null_resource.cloud_init_wait (remote-exec): status: error
 
 If this is the case, you have to manually investigate the cloud init log files on the new instance in `/var/log/cloud-init-output.log` or the script log that is written to `/tmp/setup_instance.log`.
 
-# Where to go from here
+## Where to go from here
 Congratulations!  You have now, an AWS instance running and configured and can go ahead to develop some amazing new AI-powered applications!
 
 Obviously, you want to take the scripts shown here as a template for your own projects. Doing so you should reflect and if necessary adjust the following configuration settings
@@ -312,14 +313,14 @@ instance type (onomatico/aws_instance.tf)
 AMI image (onomatico/aws_instance.tf)
 git project repository (onomatico/setup_instance.sh)
 
-# Where not to go from here
+## Where not to go from here
 The goal of this tutorial is to provide you with a template to use for quick deployment of a new ML development environment in the cloud.
 
 It's not intended to be used for the deployment of production infrastructure or to build an ML workflow that would be launching instances, training models, and doing testing or prediction automatically.
 
 You can build all those nice things by yourself and make use of Terraform to manage your cloud infrastructure, but I would recommend to you to rather have a look at tools like [KubeFlow](https://www.kubeflow.org/docs/started/introduction/) for your ML Pipelines.
 
-# Conclusion
+## Conclusion
 With this tutorial, you have hopefully reached a basic understanding of how to use Tools like Conda, Terraform, and AWS EC2 as well as a Template to start your next ML development project on an AWS instance.
 
 If you have some questions or comments write me at contact@manuelpasieka.com
