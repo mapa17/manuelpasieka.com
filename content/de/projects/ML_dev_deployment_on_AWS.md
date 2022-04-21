@@ -1,7 +1,7 @@
 ---
 title: "Deploying a Machine Learning development environment in less than 5 minutes"
 date: 2022-04-21T22:41:06Z
-draft: true
+draft: false
 ---
 
 In this blog post, I am going to show you how to deploy an AWS instance
