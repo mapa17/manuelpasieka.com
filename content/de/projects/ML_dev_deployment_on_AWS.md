@@ -1,6 +1,6 @@
 ---
 title: "Deploying a Machine Learning development environment in less than 5 minutes"
-date: 2022-04-21T22:41:06Z
+date: 2022-04-21T00:00:00Z
 draft: false
 ---
 
