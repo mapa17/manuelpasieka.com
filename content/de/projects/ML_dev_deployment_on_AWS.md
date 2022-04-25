@@ -6,47 +6,46 @@ draft: false
 
 In this blog post, you are going to learn, how to deploy an AWS instance
 with a python Machine Learning development environment using [Terraform](https://www.terraform.io/intro).
-So you should be able to deploy your next cloud based Machine Learning environment
-fresh in less than 5 minutes.
+So you will be able to deploy your next cloud based Machine Learning environment in less than 5 minutes.
 
 All scripts used in this tutorial are available on github as part of the [onomatico](https://github.com/mapa17/onomatico) project.
 
 ## Pre-Requisites
-To follow the tutorial and use the Terraform script provided, you need 
+To be able to use what you learned in this tutorial, and run the Terraform script provided, you need 
 the following.
 
 * AWS account and user credentials: You can create an AWS user for free [here](https://portal.aws.amazon.com/billing/signup) and in addition, you need to have a private/public key pair that is associated with your AWS user. On [how to create key pairs look](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) and how to [associate it with your AWS user](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws. **Note: If you want to run p2.xlarge instances make sure that you have increased your quota to at least 4. See [How to increase vCPU limits](https://aws.amazon.com/de/premiumsupport/knowledge-center/ec2-on-demand-instance-vcpu-increase/)**
 
-* Conda Environment: I highly recommend using a virtual environment like conda to install all tools and libraries that you are working with. Get miniconda installation for your platform [here](https://docs.conda.io/en/latest/miniconda.html)
+* **Conda Environment**: I highly recommend using a virtual environment like conda to install all tools and libraries that you are working with. Get miniconda installation for your platform [here](https://docs.conda.io/en/latest/miniconda.html)
 
-* Local Terraform Installation: In your virtual conda environment install terraform from the conda-forge repo with ```conda install -c conda-forge terraform```
+* **Local Terraform Installation**: In your virtual conda environment install terraform from the conda-forge repo with ```conda install -c conda-forge terraform```
 
-* Example project: The example project that contains the terraform and other scripts you can with git directly (install with conda if you should not have git). ```git clone https://github.com/mapa17/onomatico.git```
+* **Example project**: The example project that contains the terraform and other scripts you can with git directly (install with conda if you should not have git). ```git clone https://github.com/mapa17/onomatico.git```
 
 ## Overview
-Modern Infrastructure management is relying heavily on the concept of [infrastructure as code](https://stackify.com/what-is-infrastructure-as-code-how-it-works-best-practices-tutorials/) and its tooling. In our case, we are going to make use of [Terraform](https://www.terraform.io/intro) as the "infrastructure as code" software framework.
+Modern Infrastructure management is relying heavily on the concept of [infrastructure as code](https://stackify.com/what-is-infrastructure-as-code-how-it-works-best-practices-tutorials/) and its tooling. In our case, we are going to make use of [Terraform](https://www.terraform.io/intro) as an "infrastructure as code" software framework.
 
-This means that we have a terraform script (part of the example project in [onomatico/aws_instance.tf](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/aws_instance.tf)) that defines what infrastructure we want to create on AWS.
+This means that we use a terraform script (part of the example project in [onomatico/aws_instance.tf](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/aws_instance.tf)) to defines what infrastructure (i.e. instance) we want to create on AWS.
 
-In addition, the script applies another bash script ([setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/setup_instance.sh) on the remote instance that is preparing a conda environment on the newly created instance and installs the base requirements for our example project.
+To configure that instance we are going to use a bash script ([setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/setup_instance.sh) that is executed on the remote instance and is preparing a conda environment and installs the base requirements for our example project.
 
 Now the overall picture is clear, let's dive into the details.
 
 ## Choosing the right cloud instance
-In this tutorial, we are making use of AWS EC2 as the cloud provider of our choice, but no one likes to be vendor locked, and one of the benefits of a platform like Terraform is its multi-cloud capability, meaning that one can deploy and manage infrastructure on different cloud providers by, in the best case, only adapting some of your terraform scripts slightly.
+In this tutorial, we are making use of AWS EC2 as the cloud provider of our choice. But don't worry if you are afraid to be vendor locked, as one of the benefits of a platform like Terraform is its multi-cloud capability, meaning that one can deploy and manage infrastructure on different cloud providers by, in the best case, only adapting some of your terraform scripts slightly.
 
-Something that Terraform does not do for you, is to select the best **instance type** and **AMI** for your project. 
+Something that Terraform does not do for you, is to select the best **instance type** and **AMI** (i.e. system image) for your project. 
 The instance type should be selected based on the requirement of computing capacity, memory, and if a GPU is needed or not. 
-As this tutorial has to goal to provide you with a Machine Learning development environment, I opted for an [p2.xlarge](https://aws.amazon.com/ec2/instance-types/p2/) that comes with 62 gB Memory, 4 vCPU's and a GPU (Nvidia Tesla K80). An alternative would have been a stronger but as well more expansive p3.2xlarge instance.
+As this tutorial has the goal to provide you with a Machine Learning development environment, I opted for an [p2.xlarge](https://aws.amazon.com/ec2/instance-types/p2/) that comes with 62 gB Memory, 4 vCPU's and a GPU (Nvidia Tesla K80). An alternative instance type is a stronger but as well more expansive p3.2xlarge instance.
 
-I highly recommend checking [instances.vantage.sh](https://instances.vantage.sh/) for your region of choice to identify possible instances and their configurations and to get an estimate on the costs associated with them.
+I highly recommend checking [instances.vantage.sh](https://instances.vantage.sh/) to compare different instances and their configurations as well as to get an estimate of their costs.
 
-Once you selected the instance type of your choice you have to decide on the system image that will be used on the new instance. As part of this tutorial, I chose Amazons own [AWS Deep Learning AMI](https://docs.aws.amazon.com/dlami/latest/devguide/what-is-dlami.html) that comes pre-installed with AWS optimized linux installation, and the nvidia drivers (CUDA) so ML Frameworks like tensorflow or pytorch can access the GPU.
+Once you selected the instance type of your choice you have to decide on the system image that will be used on the new instance. As part of this tutorial, I chose Amazons own [AWS Deep Learning AMI](https://docs.aws.amazon.com/dlami/latest/devguide/what-is-dlami.html) that comes pre-installed with an AWS optimized linux installation, and the nvidia drivers (CUDA) so ML Frameworks like tensorflow or pytorch can make use of GPU acceleration.
 
 There is unfortunately no simple way to identify the AMI ID one needs to select the correct system image. I recommend going to the AWS web console and using AMI Catalog which is part of the EC2 web interface and searching for "Deep Learning Base AMI (Amazon Linux 2)" (the AMI ID is part of the description).
 
-Defining and using the Terraform configuration
-We define the instance and how it should be setup through the following Terraform configuration file ([onomatico/setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/aws_instance.tf))
+## Defining and using the Terraform configuration
+We define the instance and how it should be configured using the following Terraform configuration file ([onomatico/setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/aws_instance.tf))
 
 ```python
 ################################ User variables ################################
@@ -159,21 +158,21 @@ output "instance-public-ip" {
 }
 ```
 
-The configuration has four main parts
-* **User variables** that one can use to adjust the script for its use within a new project
-* **AWS Instance** configuration that uses the user variables to configure the instance
-* a terraform resource provider that will take care to block the terraform deployment while **cloud init** is used to prepare the instance
+The configuration has the following main parts:
+* **User variables** that one can use to adjust the script for its use with a new project
+* **AWS Instance** configuration that applies the user variables to define the instance
+* a **dummy terraform resource provider** that will take care to block the terraform deployment while **cloud init** is used to prepare the instance
 * a simple **aws security group** that restricts access to the machine for security reasons
 
-To use the script one needs to apply the following commands
-* `terraform init`: Running init in the project directory where the configuration is located will create several (hidden) folders and files that terraform uses to build a deployment plan for your configuration and keeps track of the executed configurations to be able to tear them down after you don't need them anymore.
+To use the script you needs to apply the following commands
+* `terraform init`: Running init in the project directory where the configuration is located will create several (hidden) folders and files that terraform uses to build a deployment plan for your configuration and keep track of the executed configurations to be able to tear them down after you don't need them anymore.
 * `terraform plan`: will launch the deployment planning process that will read your configurations (all files with the extension .tf), analyze them and create a deployment plan with the desired state that terraform will try to achieve. You can store this plan and execute it later for reproducibility.
-* `terraform apply`: is creating a plan if none exists and will execute it, doing the actual creation of instances and resources.
+* `terraform apply`: is creating a plan if none exists and will execute it, accomplishing the actual creation of instances and resources.
 * `terraform destroy`: will remove any running instances and resources defined in your configuration. 
 
 But before you can use terraform, you have to provide it with essential AWS credentials through environment variables.
 
-In particular your [AWS Access and Secret key](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html) that you can expose to Terraform through the following environment variables by executing something similar to:
+In particular your [AWS Access and Secret key](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html) that you can expose to Terraform through the following environment variables by executing:
 
 ```bash
 export AWS_ACCESS_KEY_ID=AKIAXXXXXXXXXXXX
@@ -181,18 +180,18 @@ export AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXX
 export AWS_DEFAULT_REGION=eu-central-1
 ```
 
-The last thing that is missing is the location of your public and private key pair that is associated with your AWS user (ie. the user that is specified in the AWS access and secret key with the permissions to create instances and connect to them). The location of your keys on your local host has to be specified as user variables at the top of the terraform configuration (variables **prv_key_path** and **pub_key_path**).
+The last thing that is missing is the location of your public and private key pair that is associated with your AWS user (ie. the user that is specified in the AWS access and secret key with the permissions to create instances and connect to them). To do so, you can use the two user variables **prv_key_path** and **pub_key_path** at the top of the Terraform configuration file.
 
 ## Configuring the cloud instance for an ML Project
-After Terraform has created the AWS instance it runs with the select AMI image that in our case is an AWS optimized Linux installation with the Nvidia drivers and libraries (i.e. Cuda) to support GPU hardware acceleration, but nothing more.
+After Terraform has created the AWS instance it runs the select AMI image. In our case is an AWS optimized Linux installation with the Nvidia drivers and libraries (i.e. Cuda) to support GPU hardware acceleration, but nothing more.
 
-To be able to use this instance as an ML development machine we need our ML libraries and tooling installed. As always I recommend conda + pip das the virtual environment and package management systems.
+To be able to use this instance as an ML development machine we need our ML libraries and tooling installed. As always I recommend conda + pip as the virtual environment and package management systems of your choice.
 
-For this tutorial I have created a bash script (i.e. [onomatico/setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/setup_instance.sh)) that will download miniconda, install a conda environment with the name `mldev`, will git clone our experiment project, and will install all its dependencies.
+To automatize this part of the system configuration I have created a bash script (i.e. [onomatico/setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/setup_instance.sh)) that will download miniconda, install a conda environment with the name `mldev`, will git clone our experiment project, and will install all its dependencies.
 
 Once this is done, you can ssh into the instance, activate the conda environment (with `conda activate mldev`), and enjoy a Pytorch development environment with GPU support and many of the most common ML libraries.
 
-Let's have a quick look at the setup script [setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/setup_instance.sh)
+Let's have a quick look at that setup script [setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/setup_instance.sh)
 
 ```bash
 #!/bin/sh
@@ -239,19 +238,19 @@ sudo -u ${USER} -- bash -c "cd ${HOME} && source ${CONDA_ACTIVATE} mldev && git 
 
 Similar to the Terraform configuration it starts with a bunch of project-specific user settings, like the path to the github repository containing our project and some AWS specific settings like the username and home directory of the default user.
 
-Next are some settings that will make sure to log all output created from this script to be written to `/tmp/setup_instance.log` for debugging in case of errors, and we let this script stop and fail as soon as any single command fails, by setting `set -e`.
+Next are some settings that will make sure to log all output created from this script to be written to `/tmp/setup_instance.log` for debugging in case of errors. To detect problems easier, we let this script stop and fail as soon as any single command fails, by setting `set -e`.
 
 The last part of the script is executing a series of shell commands that download, install and configure conda, plus the project and its dependencies. We make sure to run those commands as a normal user, as the script itself is executed by cloud-init as root.
 
 ## Making sure that terraform waits for the instance to complete its setup
-The bash script that we use to configure your new instance is executed through AWS standard [cloud-init](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) 
+The bash script that we use to configure the newly created instance is executed through AWS [cloud-init](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) 
 by specifying the content of the script as the parameter `user_data` in the AWS instance configuration in Terraform.
 
-This will cause the creation of a bash script on the new instance and it's executing as part of `clout-init final`. Unfortunately, this can take quite some time after the first boot of the instance as cloud-init is executing besides our script and several other AWS pre-configured system updates. Terraform on the other side does not wait for cloud-init nor has it means to monitor its progress. Instead, Terraform will simply create the instance and provide the script to cloud-init, terminating the deployment once this is done.
+This will cause the creation of a bash script on the new instance and it's executing as part of `clout-init final`. Unfortunately, the execution of this step can take place quite some time, as the first time the instance boots cloud-init is executing besides our script, several other AWS pre-configured system updates. Terraform on the other hand does not wait for cloud-init nor has it means to monitor its progress. Instead, Terraform will simply create the instance and provide the script to cloud-init, assuming its job is done.
 
-To make sure that `terraform apply` will only terminate once cloud-init has finished, we introduce a [remove-exec terraform provider](https://www.terraform.io/language/resources/provisioners/remote-exec) resource named `cloud_init_wait` that is basically ssh connecting into the machine and is executing `sudo cloud-init status --wait` which blocks until cloud-init finishes its execution.
+To make sure that `terraform apply` will only terminate once cloud-init has finished, we introduce a [remove-exec terraform provider](https://www.terraform.io/language/resources/provisioners/remote-exec) named `cloud_init_wait` that is using ssh on the remote instance and is executing `sudo cloud-init status --wait` which blocks until cloud-init finishes its execution.
 
-Once Terraform has finished executing that provider we know that the machine is ready and we can access it through ssh and the `public ip` that is contained at the end of the output generated with `terraform apply`.
+Once this modified Terraform configuration terminates executing, we know that the machine is ready and we can access it through ssh ourselves. The `public ip` of our newly created instance is contained at the end of the output generated with `terraform apply`.
 
 Example:
 ```bash
@@ -276,7 +275,7 @@ Outputs:
 instance-public-ip = "3.67.40.126"
 ```
 
-You can than access the machine with the default AWS user and your private ssh key
+You can then, access the machine with the default AWS user and your private ssh key
 
 ```bash
 ssh -i ~/.ssh/aws_dev ec2-user@3.67.40.126
@@ -287,9 +286,9 @@ The infrastructure automation you learned in this tutorial has two main sources 
 
 The Terraform configuration and the bash script that is used to configure the project environment.
 
-Terraform will do its best to inform you about errors in your configuration when you execute `terraform plan` and if you dont wander too far away from the provided template you should be fine. Besides googling for a particular error message (always the best and hopefully your first approach) the official [Terraform documentation](https://www.terraform.io/intro) is your best source of information about the Terraform API and details about different configuration parameters.
+Terraform will do its best to inform you about errors in your configuration when you execute `terraform plan` and if you don't wander too far away from the provided template you should be fine. Besides googling for a particular error message (always the best and hopefully your first approach) the official [Terraform documentation](https://www.terraform.io/intro) is your best source of information about the Terraform API and details about different configuration parameters.
 
-Far more difficult to identify are errors in the bash script. Any errors that happen during the executing with cloud-init will cause Terraform to quit with a rather cryptic error message similar to the following
+Far more difficult to identify are errors in the system configuration and the execution of the bash script. Any errors that happen during the executing with cloud-init will cause Terraform to quit with a rather cryptic error message similar to the following
 
 ```bash
 null_resource.cloud_init_wait (remote-exec): status: error
@@ -309,16 +308,18 @@ If this is the case, you have to manually investigate the cloud init log files o
 Congratulations!  You have now, an AWS instance running and configured and can go ahead to develop some amazing new AI-powered applications!
 
 Obviously, you want to take the scripts shown here as a template for your own projects. Doing so you should reflect and if necessary adjust the following configuration settings
-instance type ([onomatico/aws_instance.tf](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/aws_instance.tf))
-AMI image ([onomatico/aws_instance.tf](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/aws_instance.tf))
-git project repository ([onomatico/setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/setup_instance.sh))
+* instance type ([onomatico/aws_instance.tf](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/aws_instance.tf))
+* AMI image ([onomatico/aws_instance.tf](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/aws_instance.tf))
+* git project repository ([onomatico/setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/setup_instance.sh))
+
+Good luck!
 
 ## Where not to go from here
 The goal of this tutorial is to provide you with a template to use for quick deployment of a new ML development environment in the cloud.
 
 It's not intended to be used for the deployment of production infrastructure or to build an ML workflow that would be launching instances, training models, and doing testing or prediction automatically.
 
-You can build all those nice things by yourself and make use of Terraform to manage your cloud infrastructure, but I would recommend to you to rather have a look at tools like [KubeFlow](https://www.kubeflow.org/docs/started/introduction/) for your ML Pipelines.
+You can build all those nice things by yourself and make use of Terraform to manage your cloud infrastructure, but first I would recommend you to have a look at tools like [KubeFlow](https://www.kubeflow.org/docs/started/introduction/) for your ML Pipelines.
 
 ## Conclusion
 With this tutorial, you have hopefully reached a basic understanding of how to use Tools like Conda, Terraform, and AWS EC2 as well as a Template to start your next ML development project on an AWS instance.
