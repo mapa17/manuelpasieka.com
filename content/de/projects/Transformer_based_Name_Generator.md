@@ -55,18 +55,39 @@ To be more precise, I have taken the 100 most common last names, and have combin
 them with 10 random picked first names from the 100 most common first names.
 
 The result is a data set of 1000 name combinations from which we will take 900
-to train our generative model and 100 to validate it.
-
-
-
+to train our generative model and 100 to guide the training process.
 
 ## Project Structure and Components
-The project is fully contained in github repo [onomatico](https://github.com/mapa17/onomatico) (for the curious, the name was inspired by a wordplay on [onomatics](https://en.wikipedia.org/wiki/Onomastics), the study of names.).
+Once you cloned the project repo [onomatico](https://github.com/mapa17/onomatico) (for the curious, the name was inspired by a wordplay on [onomatics](https://en.wikipedia.org/wiki/Onomastics), the study of names.) you can find the following
+project structure
 
-The repo contains 
 * **main folder**: several configuration files to setup the project and configure additional tools (poetry, wandb) 
 * **data folder**: the training and test data used in this blog post
 * **onomatico**: the python modules tha are used to train a model and generate new names
+* **deployment**: Terraform configuration and system configuration files to launch AWS instances (fore more details [see](ML_dev_deployment_on_AWS.md) 
 
-Pricing information: https://instances.vantage.sh/?region=eu-central-1&compare_on=true&selected=g3s.xlarge
+For the rest of this tutorial we will focus on the `onomatico` folder that contains
+[onomatico/main.py](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/onomatico/main.py)
+which provides the frontend in the form of an CLI application and `onomatico/utils`
+that provides two python modules to help access the training data [onomatico/utils/Names.py](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/onomatico/utils/Names.py)
+and defines our model [onomatico/utils/Transformer.py](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/onomatico/utils/Transformer.py).
+
+We start with the last two files, explaining first the model and than how to access the training data.
+
+## A Transformer based generative Character Model
+The code used in this model is derived from the official [Transformer Tutorial](https://pytorch.org/tutorials/beginner/transformer_tutorial.html)
+and contains the main Transformer class. It combines multiple [TransformerEncoderLayers](https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoderLayer.html)
+which make up the heart of the Transformer, preceded by an Embedding layer
+that learns distributed representations of our tokens and a positional encoding function
+that modulates the embedded tokens to retain information about their position
+in the input sequence. At the output of the Transformer we have a linear layer
+that maps to our set of tokens, which in our case are individual characters.
+
+With the hyperparameter that are provided during the constructor of the class we
+can change the architecture of our model by for example increasing the size of
+the internal embedding layers used in `TransformerEncoderLayers`, the number of
+heads or the number of layers themselves. In addition we are specifying the
+number of tokens in our vocabulary for the model to be able to read all inputs
+and generate names containing only characters that are present in our vocabulary.
+
 

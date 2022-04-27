@@ -25,9 +25,9 @@ the following.
 ## Overview
 Modern Infrastructure management is relying heavily on the concept of [infrastructure as code](https://stackify.com/what-is-infrastructure-as-code-how-it-works-best-practices-tutorials/) and its tooling. In our case, we are going to make use of [Terraform](https://www.terraform.io/intro) as an "infrastructure as code" software framework.
 
-This means that we use a terraform script (part of the example project in [onomatico/aws_instance.tf](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/aws_instance.tf)) to defines what infrastructure (i.e. instance) we want to create on AWS.
+This means that we use a terraform script (part of the example project in [onomatico/deployment/aws_instance.tf](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/deployment/aws_instance.tf)) to defines what infrastructure (i.e. instance) we want to create on AWS.
 
-To configure that instance we are going to use a bash script ([setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/setup_instance.sh) that is executed on the remote instance and is preparing a conda environment and installs the base requirements for our example project.
+To configure that instance we are going to use a bash script [onomatico/deployment/setup_instance.sh](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/deployment/setup_instance.sh) that is executed on the remote instance and is preparing a conda environment and installs the base requirements for our example project.
 
 Now the overall picture is clear, let's dive into the details.
 
@@ -45,7 +45,7 @@ Once you selected the instance type of your choice you have to decide on the sys
 There is unfortunately no simple way to identify the AMI ID one needs to select the correct system image. I recommend going to the AWS web console and using AMI Catalog which is part of the EC2 web interface and searching for "Deep Learning Base AMI (Amazon Linux 2)" (the AMI ID is part of the description).
 
 ## Defining and using the Terraform configuration
-We define the instance and how it should be configured using the following Terraform configuration file ([onomatico/setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/aws_instance.tf))
+We define the instance and how it should be configured using the following Terraform configuration file ([onomatico/deployment/setup_instance.sh](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/deployment/setup_instance.sh))
 
 ```python
 ################################ User variables ################################
@@ -187,11 +187,11 @@ After Terraform has created the AWS instance it runs the select AMI image. In ou
 
 To be able to use this instance as an ML development machine we need our ML libraries and tooling installed. As always I recommend conda + pip as the virtual environment and package management systems of your choice.
 
-To automatize this part of the system configuration I have created a bash script (i.e. [onomatico/setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/setup_instance.sh)) that will download miniconda, install a conda environment with the name `mldev`, will git clone our experiment project, and will install all its dependencies.
+To automatize this part of the system configuration I have created a bash script (i.e. [onomatico/deployment/setup_instance.sh](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/deployment/setup_instance.sh)) that will download miniconda, install a conda environment with the name `mldev`, will git clone our experiment project, and will install all its dependencies.
 
 Once this is done, you can ssh into the instance, activate the conda environment (with `conda activate mldev`), and enjoy a Pytorch development environment with GPU support and many of the most common ML libraries.
 
-Let's have a quick look at that setup script [setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/setup_instance.sh)
+Let's have a quick look at that setup script [onomatico/deployment/setup_instance.sh](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/deployment/setup_instance.sh)
 
 ```bash
 #!/bin/sh
@@ -308,9 +308,9 @@ If this is the case, you have to manually investigate the cloud init log files o
 Congratulations!  You have now, an AWS instance running and configured and can go ahead to develop some amazing new AI-powered applications!
 
 Obviously, you want to take the scripts shown here as a template for your own projects. Doing so you should reflect and if necessary adjust the following configuration settings
-* instance type ([onomatico/aws_instance.tf](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/aws_instance.tf))
-* AMI image ([onomatico/aws_instance.tf](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/aws_instance.tf))
-* git project repository ([onomatico/setup_instance.sh](https://github.com/mapa17/onomatico/blob/80621794d7f94dd05397ae8beaf92fa4ef9ab985/setup_instance.sh))
+* instance type ([onomatico/deployment/aws_instance.tf](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/deployment/aws_instance.tf))
+* AMI image ([onomatico/deployment/aws_instance.tf](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/deployment/aws_instance.tf))
+* git project repository ([onomatico/deployment/setup_instance.sh](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/deployment/setup_instance.sh))
 
 Good luck!
 
