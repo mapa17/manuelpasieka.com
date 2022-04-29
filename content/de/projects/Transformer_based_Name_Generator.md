@@ -66,22 +66,37 @@ project structure
 * **onomatico**: the python modules tha are used to train a model and generate new names
 * **deployment**: Terraform configuration and system configuration files to launch AWS instances (fore more details [see](ML_dev_deployment_on_AWS.md) 
 
-For the rest of this tutorial we will focus on the `onomatico` folder that contains
-[onomatico/main.py](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/onomatico/main.py)
+For the rest of this tutorial we will focus on the `onomatico` folder that contains `onomatico/main.py`
 which provides the frontend in the form of an CLI application and `onomatico/utils`
-that provides two python modules to help access the training data [onomatico/utils/Names.py](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/onomatico/utils/Names.py)
-and defines our model [onomatico/utils/Transformer.py](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/onomatico/utils/Transformer.py).
+that provides two python modules to help access the training data `onomatico/utils/Names.py`
+and defines our model `onomatico/utils/Transformer.py`.
 
 We start with the last two files, explaining first the model and than how to access the training data.
 
 ## A Transformer based generative Character Model
 The code used in this model is derived from the official [Transformer Tutorial](https://pytorch.org/tutorials/beginner/transformer_tutorial.html)
-and contains the main Transformer class. It combines multiple [TransformerEncoderLayers](https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoderLayer.html)
-which make up the heart of the Transformer, preceded by an Embedding layer
+and contains the main Transformer class that is building a Transformer model
+on sequences of individual characters.
+
+The class constructor, combines multiple [TransformerEncoderLayers](https://pytorch.org/docs/stable/generated/torch.nn.TransformerEncoderLayer.html)
+(which make up the heart of the Transformer) preceded by an Embedding layer
 that learns distributed representations of our tokens and a positional encoding function
 that modulates the embedded tokens to retain information about their position
 in the input sequence. At the output of the Transformer we have a linear layer
 that maps to our set of tokens, which in our case are individual characters.
+
+An overview of the Transformer architecture you can see in the following diagram
+(taken form [this blog post](https://charon.me/posts/pytorch/pytorch_seq2seq_6/))
+![Transformer Architecture](images/TransformerArchitecture.jpg)
+
+Lets have a look at `onomatico/utils/Transformer.py` in a bit more detail
+
+[[INCLUDE onomatico/utils/Transfoermer.py]]
+
+For a discussion about the architecture of Transformers I can recommend
+[this](https://e2eml.school/transformers.html)
+and [the following](https://towardsdatascience.com/transformers-explained-visually-not-just-how-but-why-they-work-so-well-d840bd61a9d3) reference.
+
 
 With the hyperparameter that are provided during the constructor of the class we
 can change the architecture of our model by for example increasing the size of
@@ -90,4 +105,46 @@ heads or the number of layers themselves. In addition we are specifying the
 number of tokens in our vocabulary for the model to be able to read all inputs
 and generate names containing only characters that are present in our vocabulary.
 
+Finding the best hyper parameters for our model is a challenging task, and we will
+discuss it later in detail, but for now, as a quick peek, we will see that increasing
+the embedding sizes has little positive effect on data quality, but increasing
+the number heads does.
 
+## Loading and Preprocessing of the dataset
+The dataset is a csv file containing in a single column the first and last name.
+Whereby the last name is spelled on purpose in all capital letters.
+
+Example
+```csv
+name
+Jeffrey SMITH
+Amanda SMITH
+Justin SMITH
+Michelle SMITH
+Jennifer SMITH
+Kathleen SMITH
+Linda SMITH
+Larry SMITH
+Jacob SMITH
+...
+```
+
+The idea is to include certain amount of structural information that our generative
+model needs to learn to reproduce, in addition to the individual character distribution.
+
+The module `onomatico/utils/Names.py` contains two classes that help with loading
+the data and creating a pytorch [Dataset](https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset) (i.e `NamesDataset`)
+and another class (i.e. `Names`) that we use to iterate over the dataset
+during training to provide us with pairs of training data (i.e x, y) in mini-batches.
+
+[INCLUDE onomatico/utils/Names.py]
+
+## CLI Interface
+Part of the project is a CLI interface (`onomatico/main.py`) that has the following sub commands that can be used to:
+* `create-vocab`: Create a vocab out of CSV training data, that is needed for model training and generation of new names.
+* `train-model`: Train a model using a vocab and training data.
+* `generate`: Generate new names using the trained model and a vocab.
+* `compare`: Compare the similarity between original and generated names.
+
+
+The Transformer model is used i
