@@ -141,10 +141,68 @@ during training to provide us with pairs of training data (i.e x, y) in mini-bat
 
 ## CLI Interface
 Part of the project is a CLI interface (`onomatico/main.py`) that has the following sub commands that can be used to:
-* `create-vocab`: Create a vocab out of CSV training data, that is needed for model training and generation of new names.
-* `train-model`: Train a model using a vocab and training data.
+* `vocab`: Create a vocab out of CSV training data, that is needed for model training and generation of new names.
+* `train`: Train a model using a vocab and training data.
 * `generate`: Generate new names using the trained model and a vocab.
 * `compare`: Compare the similarity between original and generated names.
 
+You can explore the arguments required for each command with
 
-The Transformer model is used i
+`onomatico --help`
+
+The CLI is build making use of the [Typer](https://typer.tiangolo.com/) library that is a derivation of [Click](https://click.palletsprojects.com/en/8.1.x/) to reduce the boiler plait code make use of the docstrings and type hints and perform a simple type input validation when handling the program arguments.
+
+## Train a model and generate some names
+Its time to install the project dependencies, create some working directory for temporary files, train a model and generate some names.
+
+Inside the project directory and your virtual environment run something like the following
+
+```bash
+poetry install
+mkdir WD
+onomatico vocab data/names.csv WD/vocab.pt
+onomatico train data WD/vocab.pt 50 WD/model.pt --disable-wandb
+onomatico generate WD/model.pt WD/vocab.pt 900 WD/new_names.csv
+cat WD/new_names.csv
+```
+
+Congratulations you have created a set of 900 new names. Lets have a peek at
+them quickly.
+
+```bash
+names
+Joshan MARTIS
+Christie TARE
+Zachar KEKS
+Chttew GOJEZ
+Limon DARTISON
+Nichathelld GUEZ
+Chelles RARD
+Edonda GERTIZSON
+Chrim SCOTTEZ
+Aaridony MOWNEZ
+Chonarl TUGUE
+Michele MUNERES
+Ronald JAYAN
+Jotthhan PERTERE
+...
+```
+
+Not to bad, but one can spot already some issues with the names, but this
+will bring is to the topic of data quality that will be covered in the
+next blog post.
+
+So stay tuned for more!
+
+## Conclusion
+Congratulations for making it through the tutorial. You hopefully got an basic understanding on how to build a generative model and how to use the tutorial project
+to generate new names.
+
+But what about those new names? How do they compare with the training data?
+Are they simple copies or shuffles of the original names? Do the names make any
+sense, or are they only random shuffles of characters?
+How much similarity and how much novelty do we want in our new names, and how do
+we quantify the similarity between them?
+
+This and other questions we are going to discuss in the next blog post of this
+series.
