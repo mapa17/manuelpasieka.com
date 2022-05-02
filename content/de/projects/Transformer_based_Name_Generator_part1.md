@@ -1,5 +1,5 @@
 ---
-title: "Transformer based Name Generator"
+title: "Transformer based Name Generator - Part 1"
 date: 2022-04-26T00:00:00Z
 draft: false
 ---
