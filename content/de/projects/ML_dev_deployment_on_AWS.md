@@ -8,10 +8,15 @@ In this blog post, you are going to learn, how to deploy an AWS instance
 with a python Machine Learning development environment using [Terraform](https://www.terraform.io/intro).
 So you will be able to deploy your next cloud based Machine Learning environment in less than 5 minutes.
 
+This post is most useful for people that have at least a basic understanding of
+the applied technologies (AWS, Terraform, Unix), so they can adapt the provided
+template for their own projects. For those that have never worked with these
+technologies I tried to include references to introduction material.
+
 All scripts used in this tutorial are available on github as part of the [onomatico](https://github.com/mapa17/onomatico) project.
 
 ## Pre-Requisites
-To be able to use what you learned in this tutorial, and run the Terraform script provided, you need 
+To be able to use what you learned in this tutorial, and run the automation scripts provided, you need 
 the following.
 
 * AWS account and user credentials: You can create an AWS user for free [here](https://portal.aws.amazon.com/billing/signup) and in addition, you need to have a private/public key pair that is associated with your AWS user. On [how to create key pairs look](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) and how to [associate it with your AWS user](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws). **Note: If you want to run p2.xlarge instances make sure that you have increased your quota to at least 4. See [How to increase vCPU limits](https://aws.amazon.com/de/premiumsupport/knowledge-center/ec2-on-demand-instance-vcpu-increase/)**
@@ -25,7 +30,7 @@ the following.
 ## Overview
 Modern Infrastructure management is relying heavily on the concept of [infrastructure as code](https://stackify.com/what-is-infrastructure-as-code-how-it-works-best-practices-tutorials/) and its tooling. In our case, we are going to make use of [Terraform](https://www.terraform.io/intro) as an "infrastructure as code" software framework.
 
-This means that we use a terraform script (part of the example project in [onomatico/deployment/aws_instance.tf](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/deployment/aws_instance.tf)) to defines what infrastructure (i.e. instance) we want to create on AWS.
+This means that we use a terraform script (part of the example project in [onomatico/deployment/aws_instance.tf](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/deployment/aws_instance.tf)) that is executed locally, to defines what infrastructure (i.e. instance) we want to create on AWS. This tool basically performs in an programmatic way the infrastructure and system configuration that you would "normally" do per hand when using the AWS web console. 
 
 To configure that instance we are going to use a bash script [onomatico/deployment/setup_instance.sh](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/deployment/setup_instance.sh) that is executed on the remote instance and is preparing a conda environment and installs the base requirements for our example project.
 
@@ -159,7 +164,7 @@ output "instance-public-ip" {
 ```
 
 The configuration has the following main parts:
-* **User variables** that one can use to adjust the script for its use with a new project
+* **User variables** Those settings are the one you would want to change based on your system and use to apply the script in another project
 * **AWS Instance** configuration that applies the user variables to define the instance
 * a **dummy terraform resource provider** that will take care to block the terraform deployment while **cloud init** is used to prepare the instance
 * a simple **aws security group** that restricts access to the machine for security reasons
@@ -177,7 +182,7 @@ In particular your [AWS Access and Secret key](https://docs.aws.amazon.com/power
 ```bash
 export AWS_ACCESS_KEY_ID=AKIAXXXXXXXXXXXX
 export AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXX
-export AWS_DEFAULT_REGION=eu-central-1
+export AWS_DEFAULT_REGION=XXXXXXXXXXX
 ```
 
 The last thing that is missing is the location of your public and private key pair that is associated with your AWS user (ie. the user that is specified in the AWS access and secret key with the permissions to create instances and connect to them). To do so, you can use the two user variables **prv_key_path** and **pub_key_path** at the top of the Terraform configuration file.
@@ -246,7 +251,15 @@ The last part of the script is executing a series of shell commands that downloa
 The bash script that we use to configure the newly created instance is executed through AWS [cloud-init](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) 
 by specifying the content of the script as the parameter `user_data` in the AWS instance configuration in Terraform.
 
-This will cause the creation of a bash script on the new instance and it's executing as part of `clout-init final`. Unfortunately, the execution of this step can take place quite some time, as the first time the instance boots cloud-init is executing besides our script, several other AWS pre-configured system updates. Terraform on the other hand does not wait for cloud-init nor has it means to monitor its progress. Instead, Terraform will simply create the instance and provide the script to cloud-init, assuming its job is done.
+This will cause the creation of a bash script on the new instance and it's executing as part of `clout-init final` (A system process that is run during system boot). Unfortunately, the execution of this step can take quite some time. The first time the instance boots, cloud-init is executing besides our script, several other AWS pre-configured system modifications and performs an system update.
+
+This system boot process is out of the scope of Terraform, and so the Terraform deployment process will not wait for cloud-init nor has it means to monitor its progress. Instead, Terraform will simply create the instance and provide the script to cloud-init, assuming its job is done.
+
+This behavior can be acceptable in a case where you deploy some new cloud resources, like compute notes in a cluster, storage 
+pods for later use, or any asynchronous use case where you have other measures in place that make use once the new resource
+is not only deployed but actually useable. In our use case though, you want to be able to know when your new ML instance
+is ready to be used, and therefore we want to reflect the system boot status during the Terraform deployment. One easy way
+to solve this, is to make Terraform block the deployment until the system has booted and is configured completely.
 
 To make sure that `terraform apply` will only terminate once cloud-init has finished, we introduce a [remove-exec terraform provider](https://www.terraform.io/language/resources/provisioners/remote-exec) named `cloud_init_wait` that is using ssh on the remote instance and is executing `sudo cloud-init status --wait` which blocks until cloud-init finishes its execution.
 
