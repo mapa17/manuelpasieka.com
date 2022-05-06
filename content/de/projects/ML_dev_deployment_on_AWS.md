@@ -24,7 +24,7 @@ the following.
 * **Conda Environment**: I highly recommend using a virtual environment like conda to install all tools and libraries that you are working with. Get miniconda installation for your platform [here](https://docs.conda.io/en/latest/miniconda.html)
 
 * **Local Terraform Installation**: In your virtual conda environment install terraform from the conda-forge repo with ```conda install -c conda-forge terraform```
-**Note: I recently switched to an M1 Pro and unfortunately there seems to be be no Terraform package neither in conda nor any dep package for the ARM64 platform at the time of this writing. Luckily HashiCorp has you covered and provides a dedicated ARM64 binary you can get from their [official download page](https://www.terraform.io/downloads). First try to install terraform using conda, and if that fails download it manually** 
+**Note: I recently switched to an M1 Pro and unfortunately there seems to be be no Terraform package neither in conda nor any dep package for the ARM64 platform at the time of this writing. Luckily HashiCorp has you covered and provides a dedicated ARM64 binary for linux and macos you can get from their [official download page](https://www.terraform.io/downloads). First try to install terraform using conda, and if that fails download it manually** 
 
 * **Example project**: The example project that contains the terraform and other scripts you can with git directly (install with conda if you should not have git). ```git clone https://github.com/mapa17/onomatico.git```
 
@@ -89,7 +89,7 @@ terraform {
 }
 
 resource "aws_key_pair" "pub-key" {
-  key_name   = "pub-key"
+  key_name   = "TerraformMLTutorial"
   public_key = file("${var.pub_key_path}")
 }
 
@@ -134,7 +134,7 @@ resource "null_resource" "cloud_init_wait" {
 # Define a basic security group that restricts inbound access to ssh but allows
 # all outgoing access
 resource "aws_security_group" "sg" {
-  name        = "my_security_group"
+  name        = "TerraformMLTutorial_security_group"
   description = "Only allow inbound ssh access"
 
   ingress {
@@ -153,7 +153,7 @@ resource "aws_security_group" "sg" {
 
 
   tags = {
-    Name = "AWS_ML_DEV_INSTANCE"
+    Name = "TerraformMLTutorial_security_group"
   }
 }
 
@@ -295,16 +295,31 @@ You can then, access the machine with the default AWS user and your private ssh 
 ssh -i ~/.ssh/aws_dev ec2-user@3.67.40.126
 ```
 
-## Putting it all together
+Be aware to not forget about your instances created with Terraform and make sure
+to remove them after you are done using them.
 
-1. Clone the repository
+You can remove any resources allocated with Terraform by calling
+
+```bash
+terraform destroy
+```
+
+## Putting it all together
+Congratulation, you should be able to based the example scripts automatize your
+own deployment. The following is a step by step instruction on how to do so. 
+
+1. Clone the repository `git clone https://github.com/mapa17/onomatico.git`
 2. Set the AWS environment variables (Credentials)
 3. Adapt the user settings in `aws_instance.tf` to your project (i.e. set path to pub/private keys, configure instance type, AMI)
 4. Adapt the user settings in `setup_instance.sh` (i.e. provide the URL to your repo and add any required setup instructions)
 5. Initialize Terraform in the within `onomatico/deployment` with `terraform init`
-```bash
-git clone git@github.com:mapa17/onomatico.git
-```
+6. Use Terraform to deploy the instance running `terraform apply` withing the `onomatico/deployment` folder
+7. Get a coffee and wait for your instance to be prepared for you
+8. Use the IP address provided by Terraform's `instance-public-ip`  variable and connect to the instance `ssh -i ~/.ssh/XXXX ec2-user@XXXXXXX`
+9. Perform your experiments ...
+10. Stop and remove the created AWS resources `terraform destroy`
+
+That's it.
 
 ## How to resolve errors on the way
 The infrastructure automation you learned in this tutorial has two main sources of possible errors.
