@@ -24,6 +24,7 @@ the following.
 * **Conda Environment**: I highly recommend using a virtual environment like conda to install all tools and libraries that you are working with. Get miniconda installation for your platform [here](https://docs.conda.io/en/latest/miniconda.html)
 
 * **Local Terraform Installation**: In your virtual conda environment install terraform from the conda-forge repo with ```conda install -c conda-forge terraform```
+**Note: I recently switched to an M1 Pro and unfortunately there seems to be be no Terraform package neither in conda nor any dep package for the ARM64 platform at the time of this writing. Luckily HashiCorp has you covered and provides a dedicated ARM64 binary you can get from their [official download page](https://www.terraform.io/downloads). First try to install terraform using conda, and if that fails download it manually** 
 
 * **Example project**: The example project that contains the terraform and other scripts you can with git directly (install with conda if you should not have git). ```git clone https://github.com/mapa17/onomatico.git```
 
@@ -292,6 +293,17 @@ You can then, access the machine with the default AWS user and your private ssh 
 
 ```bash
 ssh -i ~/.ssh/aws_dev ec2-user@3.67.40.126
+```
+
+## Putting it all together
+
+1. Clone the repository
+2. Set the AWS environment variables (Credentials)
+3. Adapt the user settings in `aws_instance.tf` to your project (i.e. set path to pub/private keys, configure instance type, AMI)
+4. Adapt the user settings in `setup_instance.sh` (i.e. provide the URL to your repo and add any required setup instructions)
+5. Initialize Terraform in the within `onomatico/deployment` with `terraform init`
+```bash
+git clone git@github.com:mapa17/onomatico.git
 ```
 
 ## How to resolve errors on the way
