@@ -37,7 +37,7 @@ To configure that instance we are going to use a bash script [onomatico/deployme
 
 Now the overall picture is clear, let's dive into the details.
 
-## Choosing the right cloud instance
+## Choosing the right cloud instance and System Image
 In this tutorial, we are making use of AWS EC2 as the cloud provider of our choice. But don't worry if you are afraid to be vendor locked, as one of the benefits of a platform like Terraform is its multi-cloud capability, meaning that one can deploy and manage infrastructure on different cloud providers by, in the best case, only adapting some of your terraform scripts slightly.
 
 Something that Terraform does not do for you, is to select the best **instance type** and **AMI** (i.e. system image) for your project. 
@@ -53,7 +53,7 @@ There is unfortunately no simple way to identify the AMI ID one needs to select 
 ## Defining and using the Terraform configuration
 We define the instance and how it should be configured using the following Terraform configuration file ([onomatico/deployment/setup_instance.sh](https://github.com/mapa17/onomatico/blob/17519ca4f11667a4251f21746e10f99fd2cec253/deployment/setup_instance.sh))
 
-```python
+```terraform
 ################################ User variables ################################
 
 # Path to private and public key used with AWS
