@@ -402,11 +402,12 @@ So stay tuned for more!
 Congratulations for making it through the tutorial. You hopefully got an basic understanding on how to build a generative model and how to use the tutorial project
 to generate new names.
 
-But what about those new names? How do they compare with the training data?
-Are they simple copies or shuffles of the original names? Do the names make any
-sense, or are they only random shuffles of characters?
+But what do you think about those generated names? How do they compare with the
+actual names (i.e training data)?
+Are these simple copies or shuffles of the original names? Do the names make any
+sense, or are they only random sequence of characters?
 How much similarity and how much novelty do we want in our new names, and how do
-we quantify the similarity between them?
+we quantify the result?
 
-This and other questions we are going to discuss in the next blog post of this
+These and other questions we are going to discuss in the next blog post of this
 series.
