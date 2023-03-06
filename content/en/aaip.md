@@ -9,7 +9,7 @@ The Austrian Ai Podcast is a window to projects and companies in the area of Art
 Through guest interviews from experts in industry, research and the public sector
 I explore what the Austrian AI landscape has to offer.
 
-All Episodes can be found on [Spotify](https://open.spotify.com/show/2WP0q3AlEeENx5FlWCzjLw) or [Apple Podcast](https://podcasts.apple.com/at/podcast/austrian-ai-podcast/id1552827700) or [Google Podcast](https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy80YjlmMzYzNC9wb2RjYXN0L3Jzcw?sa=X&ved=0CAMQ4aUDahcKEwjoi5r9kcf9AhUAAAAAHQAAAAAQNA)
+All Episodes can be found on [Spotify](https://open.spotify.com/show/2WP0q3AlEeENx5FlWCzjLw), [Apple Podcast](https://podcasts.apple.com/at/podcast/austrian-ai-podcast/id1552827700) or [Google Podcast](https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy80YjlmMzYzNC9wb2RjYXN0L3Jzcw?sa=X&ved=0CAMQ4aUDahcKEwjoi5r9kcf9AhUAAAAAHQAAAAAQNA)
 
 {{< rawhtml >}}
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/295ivlfoezwmvqpZx2zOCn?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -24,6 +24,7 @@ All Episodes can be found on [Spotify](https://open.spotify.com/show/2WP0q3AlEeE
 
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/5p3nvjuSWEfRd4EgqhXlsi?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
+<!--
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/0cSdGfBGz2rXACyYhn9TI3?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1yTLn0JttnKUATLaf2zUuw?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -85,5 +86,6 @@ All Episodes can be found on [Spotify](https://open.spotify.com/show/2WP0q3AlEeE
 <iframe src="https://open.spotify.com/embed/episode/3x8C4lSVbaE5ctghkDkRxx?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
 <iframe src="https://open.spotify.com/embed/episode/6FlB6vdYvpYLJIRraYWzCS?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+-->
 {{< /rawhtml >}}
 
