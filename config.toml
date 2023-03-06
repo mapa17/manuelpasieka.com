@@ -60,10 +60,10 @@ defaultContentLanguage = "de"
         url = "services/"
         weight = 10
 
-      [[languages.de.menu.main]]
-        name = "Projekte"
-        url = "projects/"
-        weight = 20
+#      [[languages.de.menu.main]]
+#        name = "Projekte"
+#        url = "projects/"
+#        weight = 20
 
       [[languages.de.menu.main]]
         name = "Austrian Ai Podcast"
